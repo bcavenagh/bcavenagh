@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bcavenagh.github.io/bencavenagh",
+  "homepage": "https://bcavenagh.github.io/bcavenagh",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "classnames": "^2.2.6",

@@ -82,7 +82,7 @@ class Home extends Component{
                         </ul>
                         <h4>Tools I Use:</h4>
                         <ul>
-                            <li>Photoshop</li>
+                            <li>Photoshop2</li>
                             <li>XD</li>
                             <li>Illustrator</li>
                             <li>Pen &amp; Paper</li>

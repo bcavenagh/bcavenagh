@@ -212,6 +212,8 @@ $pink:#e538a4;
     // background: linear-gradient(to bottom, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fd3f7', endColorstr='#46a3ff',GradientType=0 ); /* IE6-9 */
     padding:50px 0;
+    z-index: 4;
+    position: relative;
     .FooterText{
         color:white;
     }

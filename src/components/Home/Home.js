@@ -74,7 +74,7 @@ class Home extends Component{
                     <img src={avatar} alt="Avatar" id="avatar" className={this.state.avatarClass}/>
                     <div className={classes.HeroText}>
                         <h1>Web Developer and Designer</h1>
-                        <h3>I help make the web and I love it.</h3>
+                        <h3>I help make the web and I what I do.</h3>
                     </div>
                 </div>
                 <div className={classes.SeeMore}>

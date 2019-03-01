@@ -1,0 +1,27 @@
+.Blue{
+    background: url('../../../assets/images/drip-blue.png') top center;
+}
+.Pink{
+    background: url('../../../assets/images/drip-pink.png') top center;
+}
+.Yellow{
+    background: url('../../../assets/images/drip-yellow.png') top center;
+}
+.Black{
+    background: url('../../../assets/images/drip-black.png') top center;
+}
+
+
+.Image{
+    // background: url('../../../assets/images/drip-repeatable-2500.png') top center;
+    position: fixed;
+    background-size: contain;
+    background-repeat: repeat-x;
+    width:100vw;
+    z-index: -1;
+    height:100vh;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+}

@@ -6,21 +6,20 @@ $subfont : 'Cairo', sans-serif;
 $font1: 25px;
 $font2: 20px;
 $dark:rgb(36, 45, 48);
+$cyan:#5fd3f7;
+$pink:#e538a4;
 
 // INTRODUCTION
 .Hero{
-    background: url('../../assets/images/drip-repeatable-2500.png') top center;
+    // background: url('../../assets/images/drip-repeatable-2500.png') top center;
     // background: white;
-    background-size: contain;
-    background-repeat: repeat-x;
+    // background-size: contain;
+    // background-repeat: repeat-x;
     width:100vw;
     height:100vh;
     position: relative;
-    color:$dark;
-    // text-shadow: 0 3px 6px rgba(0,0,0,0.5);
-    
+    color:$dark;    
     font-family: $headfont;
-
     letter-spacing: 3px;
     font-size: $font1;
     .Intro{
@@ -29,7 +28,6 @@ $dark:rgb(36, 45, 48);
         top:50%;
         left:0;
         transform: translate(0,-50%);
-        // background: rgba(255,255,255,0.7);
         padding: 15px 0;
         .Avatar{
             width:55%;
@@ -40,9 +38,6 @@ $dark:rgb(36, 45, 48);
             box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
             background-color: white;
         }
-        // .HeroText{
-        //     background: rgba(0,0,0,0.5);
-        // }
     }
     .SeeMore{
         position: absolute;
@@ -57,129 +52,135 @@ $dark:rgb(36, 45, 48);
         }
     }
 }
-
-// ABOUT
-.AboutSection{
-    position: relative;
-    font-family: $subfont;
-    font-size:$font2;
-    .About{
-        width: 100%;
-        // background: rgb(95, 211, 247);
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5fd3f7+0,00bff4+100 */
-        background: #5fd3f7; /* Old browsers */
-        // background: -moz-linear-gradient(top, hsla(194,91%,67%,1) 0%, hsla(210,100%,64%,1) 100%); /* FF3.6-15 */
-        // background: -webkit-linear-gradient(top, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        // background: linear-gradient(to bottom, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fd3f7', endColorstr='#46a3ff',GradientType=0 ); /* IE6-9 */
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        // height:300px;
-        margin-top:75px;
-        padding:45px 0 105px;
-        .AboutText{
-            width:50%;
-            color: $dark;
-        }
-    }
-    .SplitTable{
-        background:#f7fdff;
-        width:75%;
-        margin:-75px auto 75px;
-        max-width: 1200px;
-        box-shadow: 0 3px 15px rgba(196, 196, 196, 0.5);
-        border-radius: 15px;
-        display: flex;
-        justify-content: space-evenly;
+.Content{
+    background: white;
+    // ABOUT
+    .AboutSection{
         position: relative;
-        height: auto;
-        padding:15px;
-        box-sizing: border-box;
-        .Column{
-            padding:15px 25px;
-            box-sizing: border-box;
-            flex-basis: 0;
-            flex-grow: 1;
-            flex-shrink: 1;
-            h4{
-                margin: 0;
-                color:#5fd3f7;
-                font-weight: bold;
-            }
-            ul{
-                list-style-type: none;
-                padding: 0;
-                margin-top: 3px;
+        font-family: $subfont;
+        font-size:$font2;
+        background: white;
+        .About{
+            width: 100%;
+            // background: rgb(95, 211, 247);
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5fd3f7+0,00bff4+100 */
+            background: $cyan; /* Old browsers */
+            // background: -moz-linear-gradient(top, hsla(194,91%,67%,1) 0%, hsla(210,100%,64%,1) 100%); /* FF3.6-15 */
+            // background: -webkit-linear-gradient(top, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            // background: linear-gradient(to bottom, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fd3f7', endColorstr='#46a3ff',GradientType=0 ); /* IE6-9 */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // height:300px;
+            margin-top:75px;
+            padding:45px 0 105px;
+            .AboutText{
+                width:50%;
+                color: $dark;
             }
         }
-        .ColumnSeparator{
-            border-right: 2px solid rgba(199, 199, 199, 0.5);
+        .SplitTable{
+            background:#f7fdff;
+            // background: url('../../assets/images/drip-yellow.png') top center;
+            background-size: contain;
+            width:75%;
+            margin:-75px auto 0;
+            max-width: 1200px;
+            box-shadow: 0 3px 15px rgba(196, 196, 196, 0.5);
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+            height: auto;
+            padding:15px;
+            box-sizing: border-box;
+            .Column{
+                padding:15px 25px;
+                box-sizing: border-box;
+                flex-basis: 0;
+                flex-grow: 1;
+                flex-shrink: 1;
+                h4{
+                    margin: 0;
+                    color:$cyan;
+                    font-weight: bold;
+                }
+                ul{
+                    list-style-type: none;
+                    padding: 0;
+                    margin-top: 3px;
+                }
+            }
+            .ColumnSeparator{
+                border-right: 2px solid rgba(199, 199, 199, 0.5);
+            }
         }
     }
-}
-
-//COMPANIES
-.Companies{
-    font-family: $subfont;
-    margin-top: 50px;
-}
-
-//COLLAB
-.CollabContainer{
-    width:100%;
-    background: $dark;
-    .Collab{
+    
+    //COMPANIES
+    .Companies{
         font-family: $subfont;
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: space-around;
-        align-items: center;
-        max-width: 1200px;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e538a4+0,c52595+100 */
-        // background: #e538a4; /* Old browsers */
-        // background: -moz-linear-gradient(top, hsla(323,77%,56%,1) 0%, hsla(318,68%,46%,1) 100%); /* FF3.6-15 */
-        // background: -webkit-linear-gradient(top, hsla(323,77%,56%,1) 0%,hsla(318,68%,46%,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        // background: linear-gradient(to bottom, hsla(323,77%,56%,1) 0%,hsla(318,68%,46%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e538a4', endColorstr='#c52595',GradientType=0 ); /* IE6-9 */
-        padding: 25px 50px;
-        color: white;
-        font-size: 35px;
-        margin: 0 auto;
-        .Interested{
-            margin: 0 25px;
-            text-align: center;
-            h3{
-                margin: 0;
+        margin-top: 50px;
+    }
+    
+    //COLLAB
+    .CollabContainer{
+        width:100%;
+        background: $dark;
+        margin-top:75px; 
+        .Collab{
+            font-family: $subfont;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e538a4+0,c52595+100 */
+            // background: #e538a4; /* Old browsers */
+            // background: -moz-linear-gradient(top, hsla(323,77%,56%,1) 0%, hsla(318,68%,46%,1) 100%); /* FF3.6-15 */
+            // background: -webkit-linear-gradient(top, hsla(323,77%,56%,1) 0%,hsla(318,68%,46%,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            // background: linear-gradient(to bottom, hsla(323,77%,56%,1) 0%,hsla(318,68%,46%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e538a4', endColorstr='#c52595',GradientType=0 ); /* IE6-9 */
+            padding: 25px 50px;
+            color: white;
+            font-size: 35px;
+            margin: 0 auto;
+            .Interested{
+                margin: 0 25px;
+                text-align: center;
+                h3{
+                    margin: 0;
+                    flex: 1 1 auto;
+                }
+                p{
+                    flex: 1 1 auto;
+                    font-size: 20px;
+                    margin:5px 0;
+                }
+            }
+            button{
+                border:2px solid $pink;
+                border-radius: 40px;
+                // padding: 5px 20px;
+                height:75px;
+                margin: 20px auto;
+                min-width: 250px;
+                max-width: 300px;
+                color:white;
+                font-size: 25px;
+                background: rgba(0,0,0,0);
+                transition: all 0.3s;
                 flex: 1 1 auto;
             }
-            p{
-                flex: 1 1 auto;
-                font-size: 20px;
-                margin:5px 0;
+            button:hover{
+                color:$pink;
+                background:white;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+                cursor: pointer;
             }
-        }
-        button{
-            border:2px solid #e538a4;
-            border-radius: 40px;
-            // padding: 5px 20px;
-            height:75px;
-            margin: 20px auto;
-            min-width: 250px;
-            max-width: 300px;
-            color:white;
-            font-size: 25px;
-            background: rgba(0,0,0,0);
-            transition: all 0.3s;
-            flex: 1 1 auto;
-        }
-        button:hover{
-            color:#e538a4;
-            background:white;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.5);
-            cursor: pointer;
         }
     }
 }
@@ -187,14 +188,37 @@ $dark:rgb(36, 45, 48);
 //FOOTER
 .Footer{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5fd3f7+0,00bff4+100 */
-    background: #5fd3f7; /* Old browsers */
+    background: $cyan; /* Old browsers */
     // background: -moz-linear-gradient(top, hsla(194,91%,67%,1) 0%, hsla(210,100%,64%,1) 100%); /* FF3.6-15 */
     // background: -webkit-linear-gradient(top, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* Chrome10-25,Safari5.1-6 */
     // background: linear-gradient(to bottom, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fd3f7', endColorstr='#46a3ff',GradientType=0 ); /* IE6-9 */
-    min-height: 250px;
+    padding:50px 0;
     .FooterText{
         color:white;
-        font-weight: bold;
+    }
+    .FooterSocial{
+        display: flex;
+        justify-content: center;
+        margin:20px 0 0 0;
+        .FooterSocialIcon{
+            width:60px;
+            height:60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border:2px solid $dark;
+            margin:5px 15px;
+            border-radius: 50%;
+            svg{fill:$dark;}
+        }
+        .FooterSocialIcon:hover{
+            cursor: pointer;
+            background: white;
+            border:2px solid $cyan;
+            svg{
+                fill: $cyan;
+            }
+        }
     }
 }

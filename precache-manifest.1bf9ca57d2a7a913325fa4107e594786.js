@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/bcavenagh/static/media/drip-pink.9074152f.png"
   },
   {
-    "revision": "16e12e2ec67ae9dcf744423d98deaf53",
-    "url": "/bcavenagh/static/media/drip-yellow.16e12e2e.png"
-  },
-  {
     "revision": "f7946be8234fd5fa8abc91f7930b362f",
     "url": "/bcavenagh/static/media/drip-black.f7946be8.png"
+  },
+  {
+    "revision": "16e12e2ec67ae9dcf744423d98deaf53",
+    "url": "/bcavenagh/static/media/drip-yellow.16e12e2e.png"
   },
   {
     "revision": "b2c720e5cfcb602dd32b",

@@ -37,7 +37,12 @@ $pink:#e538a4;
             border-radius: 50%;
             box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
             background-color: white;
+            z-index: 3;
+            // transition: all 0.3s;
         }
+        // .mini{
+        //     background: red;
+        // }
     }
     .SeeMore{
         position: absolute;
@@ -54,6 +59,8 @@ $pink:#e538a4;
 }
 .Content{
     background: white;
+    z-index: 1;
+    position: relative;
     // ABOUT
     .AboutSection{
         position: relative;

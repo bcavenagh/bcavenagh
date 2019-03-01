@@ -29,21 +29,34 @@ class Home extends Component{
                 {name:'Aubry Lane', logoSrc: AubryLane},
                 {name:'Go Splash', logoSrc: GoSplash},
                 {name:"Heartland FPG", logoSrc: Heartland}
-            ]
+            ],
+            avatarClass: classNames(classes.Avatar),
         }
     }
-    // componentDidMount(){
-    //     window.addEventListener('scroll', this.handleScroll);
-    // }
-    handleScroll(){
-        // console.log('scroll')
-        // let scrollTop = window.scrollY;
-        // console.log(scrollTop);
+    componentDidMount(){
+        window.addEventListener('scroll', () => {
+            let parent = document.getElementById('parallax-container');
+            let children = parent.getElementsByTagName('div');
+            for(let i = 0; i < children.length; i++){
+                children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
+            }
         
-
+            let heroPos = document.getElementById("avatar");
+            
+            if(heroPos.getBoundingClientRect().top <= 0){
+                this.setState({
+                    avatarClass: classNames(classes.Avatar, classes.mini)
+                })
+            }else{
+                if(this.state.avatarClass !== null){
+                    this.setState({
+                        avatarClass: classNames(classes.Avatar)
+                    })
+                }
+            }
+        }, false)
     }
     render(){
-
         return(
             <>
             <div className={classes.Hero}>
@@ -53,8 +66,8 @@ class Home extends Component{
                     <Drip color='Pink' speed={0.6}/>
                     <Drip color='Blue' speed={1}/>
                 </div>
-                <div className={classes.Intro}>
-                    <img src={avatar} alt="Avatar" className={classes.Avatar}/>
+                <div id="intro" className={classes.Intro}>
+                    <img src={avatar} alt="Avatar" id="avatar" className={this.state.avatarClass}/>
                     <div className={classes.HeroText}>
                         <h1>Web Developer and Designer</h1>
                         <h3>I help make the web and I love it.</h3>
@@ -145,12 +158,6 @@ class Home extends Component{
             </>
         );
     }
-}
-window.addEventListener('scroll', () => {
-    let parent = document.getElementById('parallax-container');
-    let children = parent.getElementsByTagName('div');
-    for(let i = 0; i < children.length; i++){
-        children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
-    }
-}, false)
+}            
+
 export default Home; 

@@ -6,7 +6,7 @@ $subfont : 'Cairo', sans-serif;
 $font1: 25px;
 $font2: 20px;
 $dark:rgb(36, 45, 48);
-$cyan:#5fd3f7;
+$cyan:rgb(2,192,238);
 $pink:#e538a4;
 
 // INTRODUCTION
@@ -22,6 +22,16 @@ $pink:#e538a4;
     font-family: $headfont;
     letter-spacing: 3px;
     font-size: $font1;
+    .BlueCover{
+        // background: rebeccapurple;
+        background:rgb(2,192,238);
+        position: fixed;
+        top:0;
+        left:0;
+        z-index: 1;
+        width:100%;
+        height:0;
+    }
     .Intro{
         width: 100%;
         position: absolute;
@@ -29,6 +39,7 @@ $pink:#e538a4;
         left:0;
         transform: translate(0,-50%);
         padding: 15px 0;
+        z-index: 2;
         .Avatar{
             width:55%;
             max-width:250px;

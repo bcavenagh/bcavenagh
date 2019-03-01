@@ -17,7 +17,7 @@ import Blue from '../../assets/images/drip-blue.png';
 import Pink from '../../assets/images/drip-pink.png';
 import Yellow from '../../assets/images/drip-yellow.png';
 import Black from '../../assets/images/drip-black.png';
-
+// 84,190,233
 class Home extends Component{
     constructor(props){
         super(props);
@@ -37,9 +37,12 @@ class Home extends Component{
         window.addEventListener('scroll', () => {
             let parent = document.getElementById('parallax-container');
             let children = parent.getElementsByTagName('div');
+            let cover = document.getElementById('cover');
             for(let i = 0; i < children.length; i++){
-                children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
+                children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
             }
+            console.log(cover.style.height)
+            cover.style.height = (window.pageYOffset)*0.8 + "px";
         
             let heroPos = document.getElementById("avatar");
             
@@ -60,11 +63,12 @@ class Home extends Component{
         return(
             <>
             <div className={classes.Hero}>
+                <div id="cover" className={classes.BlueCover} ></div>
                 <div id='parallax-container'>
-                    <Drip color='Black' speed={0.1}/>
-                    <Drip color='Yellow' speed={0.3}/>
-                    <Drip color='Pink' speed={0.6}/>
-                    <Drip color='Blue' speed={1}/>
+                    <Drip color='Black'/>
+                    <Drip color='Yellow'/>
+                    <Drip color='Pink'/>
+                    <Drip color='Blue'/>
                 </div>
                 <div id="intro" className={classes.Intro}>
                     <img src={avatar} alt="Avatar" id="avatar" className={this.state.avatarClass}/>

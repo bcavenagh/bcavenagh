@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import classes from './Home.module.scss';
-import avatar from '../../assets/images/AVATAR.png';
 import { FaAngleDown, FaPencilRuler, FaCode, FaGithub, FaLinkedinIn, FaFacebook, FaInstagram } from 'react-icons/fa';
 import classNames from 'classnames';
 import Companies from '../Companies/Companies';
 import Drip from './Drip/Drip';
+import './Home.css';
 
+import avatar from '../../assets/images/Me.JPG';
 import Heartland from '../../assets/images/logos/hfpg.png';
 import Splenda from '../../assets/images/logos/splenda.png';
 import JavaHouse from '../../assets/images/logos/jh.png';
@@ -13,11 +14,11 @@ import RadioFlyer from '../../assets/images/logos/rf.png';
 import AubryLane from '../../assets/images/logos/al.png';
 import GoSplash from '../../assets/images/logos/gs.png';
 
-import Blue from '../../assets/images/drip-blue.png';
-import Pink from '../../assets/images/drip-pink.png';
-import Yellow from '../../assets/images/drip-yellow.png';
-import Black from '../../assets/images/drip-black.png';
-// 84,190,233
+// import Blue from '../../assets/images/drip-blue.png';
+// import Pink from '../../assets/images/drip-pink.png';
+// import Yellow from '../../assets/images/drip-yellow.png';
+// import Black from '../../assets/images/drip-black.png';
+
 class Home extends Component{
     constructor(props){
         super(props);
@@ -63,7 +64,7 @@ class Home extends Component{
         return(
             <>
             <div className={classes.Hero}>
-                <div id="cover" className={classes.BlueCover} ></div>
+                <div id="cover" className={classes.BlackCover} ></div>
                 <div id='parallax-container'>
                     <Drip color='Black'/>
                     <Drip color='Yellow'/>
@@ -71,10 +72,21 @@ class Home extends Component{
                     <Drip color='Blue'/>
                 </div>
                 <div id="intro" className={classes.Intro}>
-                    <img src={avatar} alt="Avatar" id="avatar" className={this.state.avatarClass}/>
+                    <div id="avatar" class="ch-item ch-img-1">				
+                        <div class="ch-info-wrap">
+                            <div class="ch-info">
+                                <div class="ch-info-front ch-img-1"></div>
+                                <div class="ch-info-back">
+                                    {/* <h3>Bears Type</h3>
+                                    <p>by Josh Schott <a href="http://drbl.in/ewUW">View on Dribbble</a></p> */}
+                                </div>	
+                            </div>
+                        </div>
+                    </div>
+                    {/* <img src={avatar} alt="Avatar" id="avatar" className={this.state.avatarClass}/> */}
                     <div className={classes.HeroText}>
                         <h1>Web Developer and Designer</h1>
-                        <h3>I help make the web and I what I do.</h3>
+                        <h3>I help make the web and I love what I do.</h3>
                     </div>
                 </div>
                 <div className={classes.SeeMore}>

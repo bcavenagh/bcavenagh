@@ -13,6 +13,7 @@ $pink:#e538a4;
 .Hero{
     width:100vw;
     height:100vh;
+    min-height:515px;
     position: relative;
     color:$dark;    
     font-family: $headfont;
@@ -42,10 +43,10 @@ $pink:#e538a4;
         top:50%;
         left:0;
         transform: translate(0,-50%);
-        padding: 15px 0;
+        padding: 15px 25px;
+        box-sizing: border-box;
         z-index: 2;
         .Avatar{
-            // width:55%;
             width:250px;
             height:250px;
             margin:0 auto;
@@ -85,7 +86,6 @@ $pink:#e538a4;
         background: white;
         .About{
             width: 100%;
-            // background: rgb(95, 211, 247);
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5fd3f7+0,00bff4+100 */
             background: $cyan; /* Old browsers */
             // background: -moz-linear-gradient(top, hsla(194,91%,67%,1) 0%, hsla(210,100%,64%,1) 100%); /* FF3.6-15 */
@@ -96,17 +96,15 @@ $pink:#e538a4;
             display: flex;
             justify-content: center;
             align-items: center;
-            // height:300px;
             margin-top:75px;
             padding:45px 0 105px;
             .AboutText{
-                width:50%;
+                width:75%;
                 color: $dark;
             }
         }
         .SplitTable{
             background:#f7fdff;
-            // background: url('../../assets/images/drip-yellow.png') top center;
             background-size: contain;
             width:75%;
             margin:-75px auto 0;
@@ -119,12 +117,15 @@ $pink:#e538a4;
             height: auto;
             padding:15px;
             box-sizing: border-box;
+            flex-wrap: wrap;
+
             .Column{
                 padding:15px 25px;
                 box-sizing: border-box;
                 flex-basis: 0;
                 flex-grow: 1;
                 flex-shrink: 1;
+                min-width: 250px;
                 h4{
                     margin: 0;
                     color:$cyan;
@@ -187,7 +188,6 @@ $pink:#e538a4;
             button{
                 border:2px solid $pink;
                 border-radius: 40px;
-                // padding: 5px 20px;
                 height:75px;
                 margin: 20px auto;
                 min-width: 250px;
@@ -210,7 +210,6 @@ $pink:#e538a4;
 
 //FOOTER
 .Footer{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5fd3f7+0,00bff4+100 */
     background: $cyan; /* Old browsers */
     // background: -moz-linear-gradient(top, hsla(194,91%,67%,1) 0%, hsla(210,100%,64%,1) 100%); /* FF3.6-15 */
     // background: -webkit-linear-gradient(top, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -247,3 +246,68 @@ $pink:#e538a4;
         }
     }
 }
+@media all and (max-width: 1690px) {}
+@media all and (max-width: 1280px) {}
+@media all and (max-width: 980px) {
+    .Content{
+        .AboutSection{
+            font-size: 16px;
+            .About{
+                .AboutText{
+                    width:75%;
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 736px) {
+    .Hero{
+        font-size: 18px;
+        .SeeMore{
+            font-size: 13px;
+            p{
+                font-size: 13px;
+            }
+        }
+    }
+    .Content{
+        .AboutSection{
+            font-size: 16px;
+            .About{
+                .AboutText{
+                    width:80%;
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 707px){
+    .SplitTable{
+        .ColumnSeparator{
+            border-right:none !important;
+            border-bottom: 2px solid rgba(199, 199, 199, 0.5);
+        }
+    }
+}
+@media all and (max-width: 480px){
+    .Hero{
+        font-size: 16px;
+        .SeeMore{
+            font-size: 12px;
+            p{
+                font-size: 12px;
+            }
+        }
+    }
+    .Content{
+        .AboutSection{
+            .About{
+                .AboutText{
+                    width:80%;
+                }
+            }
+        }
+        
+    }
+}
+

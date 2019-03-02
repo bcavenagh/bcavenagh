@@ -42,7 +42,7 @@ class Home extends Component{
             for(let i = 0; i < children.length; i++){
                 children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
             }
-            console.log(cover.style.height)
+            // console.log(cover.style.height)
             cover.style.height = (window.pageYOffset)*0.8 + "px";
         
             let heroPos = document.getElementById("avatar");
@@ -72,11 +72,11 @@ class Home extends Component{
                     <Drip color='Blue'/>
                 </div>
                 <div id="intro" className={classes.Intro}>
-                    <div id="avatar" class="ch-item ch-img-1">				
-                        <div class="ch-info-wrap">
-                            <div class="ch-info">
-                                <div class="ch-info-front ch-img-1"></div>
-                                <div class="ch-info-back">
+                    <div id="avatar" className="ch-item ch-img-1">				
+                        <div className="ch-info-wrap">
+                            <div className="ch-info">
+                                <div className="ch-info-front ch-img-1"></div>
+                                <div className="ch-info-back">
                                     {/* <h3>Bears Type</h3>
                                     <p>by Josh Schott <a href="http://drbl.in/ewUW">View on Dribbble</a></p> */}
                                 </div>	

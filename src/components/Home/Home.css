@@ -46,17 +46,6 @@
 	background: url('../../assets/images/Me.JPG') center center;
 	background-size: contain;
 }
-/* .ch-img-1 { 
-	background-image: url(../../assets/images/drip-blue.png);
-}
-
-.ch-img-2 { 
-	background-image: url(../../assets/images/drip-pink.png);
-}
-
-.ch-img-3 { 
-	background-image: url(../../assets/images/drip-yellow.png);
-} */
 .ch-info h3 {
 	color: #fff;
 	text-transform: uppercase;
@@ -103,4 +92,10 @@
 
 .ch-item:hover .ch-info {
 	transform: rotate3d(0,1,0,-250deg);
+}
+@media only screen and (max-width: 480px){
+    .ch-item, .ch-info-wrap, .ch-info {
+		width:150px;
+		height:150px;
+	}
 }

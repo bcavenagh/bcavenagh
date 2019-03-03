@@ -43,7 +43,7 @@ $pink:#e538a4;
         top:50%;
         left:0;
         transform: translate(0,-50%);
-        padding: 15px 25px;
+        padding: 45px 25px;
         box-sizing: border-box;
         z-index: 2;
         .Avatar{
@@ -307,7 +307,18 @@ $pink:#e538a4;
                 }
             }
         }
-        
+        .Collab{
+            font-size: 25px;
+            padding:10px;
+            .Interested{
+                h3{
+                    font-size:24px !important;
+                }
+                p{
+                    font-size: 17px !important;
+                }
+            }
+        }
     }
 }
 

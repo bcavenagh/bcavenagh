@@ -57,6 +57,16 @@ $pink:#e538a4;
             z-index: 3;
 
         }
+        // .Flip{
+        //     .ch-info{transform: rotate3d(0,1,0,-250deg);}
+        // }.Unflip{
+        //     .ch-info{transform: rotate3d(0,1,0,0deg) !important;}
+        //     .ch-info-wrap{
+        //         box-shadow: 
+        //             0 0 0 20px rgba(255,255,255,0.2), 
+        //             inset 0 0 3px rgba(115,114, 23, 0.8);
+        //     }
+        // }
         // .mini{
         //     background: red;
         // }
@@ -226,6 +236,7 @@ $pink:#e538a4;
         justify-content: center;
         margin:20px 0 0 0;
         .FooterSocialIcon{
+            transition: all .3s;
             width:60px;
             height:60px;
             display: flex;

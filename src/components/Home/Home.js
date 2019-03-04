@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import classes from './Home.module.scss';
 import { FaAngleDown, FaPencilRuler, FaCode, FaGithub, FaLinkedinIn, FaFacebook, FaInstagram } from 'react-icons/fa';
 import classNames from 'classnames';
@@ -14,11 +15,6 @@ import RadioFlyer from '../../assets/images/logos/rf.png';
 import AubryLane from '../../assets/images/logos/al.png';
 import GoSplash from '../../assets/images/logos/gs.png';
 
-// import Blue from '../../assets/images/drip-blue.png';
-// import Pink from '../../assets/images/drip-pink.png';
-// import Yellow from '../../assets/images/drip-yellow.png';
-// import Black from '../../assets/images/drip-black.png';
-
 class Home extends Component{
     constructor(props){
         super(props);
@@ -32,7 +28,11 @@ class Home extends Component{
                 {name:"Heartland FPG", logoSrc: Heartland}
             ],
             avatarClass: classNames(classes.Avatar),
+            isFlipped:false,
+            coinClass:classNames("ch-info"),
         }
+
+        this.toggleFlip = this.toggleFlip.bind(this);
     }
     componentDidMount(){
         window.addEventListener('scroll', () => {
@@ -42,23 +42,30 @@ class Home extends Component{
             for(let i = 0; i < children.length; i++){
                 children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
             }
-            // console.log(cover.style.height)
             cover.style.height = (window.pageYOffset)*0.8 + "px";
         
-            let heroPos = document.getElementById("avatar");
+            // let heroPos = document.getElementById("avatar");
             
-            if(heroPos.getBoundingClientRect().top <= 0){
-                this.setState({
-                    avatarClass: classNames(classes.Avatar, classes.mini)
-                })
-            }else{
-                if(this.state.avatarClass !== null){
-                    this.setState({
-                        avatarClass: classNames(classes.Avatar)
-                    })
-                }
-            }
+            // if(heroPos.getBoundingClientRect().top <= 0){
+            //     this.setState({
+            //         avatarClass: classNames(classes.Avatar, classes.mini)
+            //     })
+            // }else{
+            //     if(this.state.avatarClass !== null){
+            //         this.setState({
+            //             avatarClass: classNames(classes.Avatar)
+            //         })
+            //     }
+            // }
         }, false)
+    }
+    toggleFlip(){
+        let isFlipped = this.state.isFlipped;
+        this.setState(function(previousState, currentProps) {
+            return{
+                isFlipped: !previousState.isFlipped
+            }
+        });
     }
     render(){
         return(
@@ -72,18 +79,16 @@ class Home extends Component{
                     <Drip color='Blue'/>
                 </div>
                 <div id="intro" className={classes.Intro}>
-                    <div id="avatar" className="ch-item ch-img-1">				
+                    {/* <div id="avatar" className="ch-item ch-img-1" onClick={this.toggleFlip}> */}
+                    <div id="avatar" className="ch-item ch-img-1">
+                        {/* <div className={this.state.isFlipped ? classNames("ch-info-wrap", classes.Flip) : classNames("ch-info-wrap", classes.Unflip)}> */}
                         <div className="ch-info-wrap">
                             <div className="ch-info">
                                 <div className="ch-info-front ch-img-1"></div>
-                                <div className="ch-info-back">
-                                    {/* <h3>Bears Type</h3>
-                                    <p>by Josh Schott <a href="http://drbl.in/ewUW">View on Dribbble</a></p> */}
-                                </div>	
+                                <div className="ch-info-back"></div>
                             </div>
                         </div>
                     </div>
-                    {/* <img src={avatar} alt="Avatar" id="avatar" className={this.state.avatarClass}/> */}
                     <div className={classes.HeroText}>
                         <h1>Web Developer and Designer</h1>
                         <h3>I help make the web and I love what I do.</h3>
@@ -149,7 +154,7 @@ class Home extends Component{
                             <h3>Interested in working together?</h3>
                             <p>I'm always looking for something new to do. Send me a message and lets chat.</p>
                         </div>
-                        <button>Let's Chat!</button>
+                        <Link to={'/winner'}><button>Let's Chat!</button></Link>
                     </div>
                 </div>
     
@@ -165,10 +170,10 @@ class Home extends Component{
                     Ben Cavenagh &copy;2019
                 </div>
                 <div className={classes.FooterSocial}>
-                    <div className={classes.FooterSocialIcon}><FaGithub size={35}/></div>
-                    <div className={classes.FooterSocialIcon}><FaLinkedinIn size={35}/></div>
-                    <div className={classes.FooterSocialIcon}><FaInstagram size={35}/></div>
-                    <div className={classes.FooterSocialIcon}><FaFacebook size={35}/></div>
+                    <a href="https://github.com/bcavenagh"><div className={classes.FooterSocialIcon}><FaGithub size={35}/></div></a>
+                    <a href="https://www.linkedin.com/in/ben-cavenagh/"><div className={classes.FooterSocialIcon}><FaLinkedinIn size={35}/></div></a>
+                    <a href="https://www.instagram.com/bcavvs/"><div className={classes.FooterSocialIcon}><FaInstagram size={35}/></div></a>
+                    <a href="https://www.facebook.com/ben.cavenagh"><div className={classes.FooterSocialIcon}><FaFacebook size={35}/></div></a>
                 </div>
             </footer>
             </>

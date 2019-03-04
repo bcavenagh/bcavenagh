@@ -90,9 +90,10 @@
 		inset 0 0 3px rgba(115,114, 23, 0.8);
 }
 
-.ch-item:hover .ch-info {
+.ch-item:hover .ch-info{
 	transform: rotate3d(0,1,0,-250deg);
 }
+
 @media only screen and (max-width: 480px){
     .ch-item, .ch-info-wrap, .ch-info {
 		width:150px;

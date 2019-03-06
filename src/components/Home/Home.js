@@ -31,33 +31,40 @@ class Home extends Component{
             isFlipped:false,
             coinClass:classNames("ch-info"),
         }
-
         this.toggleFlip = this.toggleFlip.bind(this);
+        this.onScroll = this.onScroll.bind(this)
     }
     componentDidMount(){
-        window.addEventListener('scroll', () => {
-            let parent = document.getElementById('parallax-container');
-            let children = parent.getElementsByTagName('div');
-            let cover = document.getElementById('cover');
-            for(let i = 0; i < children.length; i++){
-                children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
-            }
-            cover.style.height = (window.pageYOffset)*0.8 + "px";
+        window.addEventListener('scroll', this.onScroll, false);
+    }
+    componentWillUnmount() {
+        // you need to unbind the same listener that was binded.
+        window.removeEventListener('scroll', this.onScroll, false);
+    }
+    onScroll(){
+        let parent = document.getElementById('parallax-container');
+        if(!parent){console.log('The element ' + parent + ' does not exist.');return;}
+        let children = parent.getElementsByTagName('div');
+        let cover = document.getElementById('cover');
+        for(let i = 0; i < children.length; i++){
+            children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
+        }
+        cover.style.height = (window.pageYOffset)*0.8 + "px";
+    
+        // let heroPos = document.getElementById("avatar");
         
-            // let heroPos = document.getElementById("avatar");
-            
-            // if(heroPos.getBoundingClientRect().top <= 0){
-            //     this.setState({
-            //         avatarClass: classNames(classes.Avatar, classes.mini)
-            //     })
-            // }else{
-            //     if(this.state.avatarClass !== null){
-            //         this.setState({
-            //             avatarClass: classNames(classes.Avatar)
-            //         })
-            //     }
-            // }
-        }, false)
+        // if(heroPos.getBoundingClientRect().top <= 0){
+        //     this.setState({
+        //         avatarClass: classNames(classes.Avatar, classes.mini)
+        //     })
+        // }else{
+        //     if(this.state.avatarClass !== null){
+        //         this.setState({
+        //             avatarClass: classNames(classes.Avatar)
+        //         })
+        //     }
+        // }
+        
     }
     toggleFlip(){
         let isFlipped = this.state.isFlipped;
@@ -154,7 +161,7 @@ class Home extends Component{
                             <h3>Interested in working together?</h3>
                             <p>I'm always looking for something new to do. Send me a message and lets chat.</p>
                         </div>
-                        <Link to={'/winner'}><button>Let's Chat!</button></Link>
+                        <Link to={'/contact'}><button>Let's Chat!</button></Link>
                     </div>
                 </div>
     

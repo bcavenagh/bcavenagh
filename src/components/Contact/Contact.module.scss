@@ -1,18 +1,141 @@
 $dark:rgb(31, 35, 38);
 $cyan:rgb(2,192,238);
 $pink:#e538a4;
-.ContactForm{
-    width:50%;
-    margin:0 auto;
-    .Input{
-        width:100%;
-        height:35px;
-        border: none;
-        border-bottom: 2px solid $dark;
-        margin:25px 0;
-    }
-    .LargeInput{
-        width:100%;
-        height:95px;
-    }
+$yellow:rgb(255,205,40);
+
+$inputHeight: 45px;
+$labelWidth:100px;
+$inputBorderRadius: 5px;
+$inputTopBottomPadding:20px;
+$inputFontSize: 20px;
+
+// Transition Ease
+@mixin ease($time:333ms, $attr:all, $curve:ease-in-out) {
+    -webkit-transition: $attr $time $curve;
+    -moz-transition: $attr $time $curve;
+    -o-transition: $attr $time $curve;
+    -ms-transition: $attr $time $curve;
+    transition: $attr $time $curve;
+}
+
+.ContactPage{
+    min-width:100vw;
+    min-height:100vh;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .ContactForm{
+        text-transform: uppercase;
+        width:75%;
+        min-width:350px;
+        margin:0 auto;
+        color:white;
+        background: $dark;
+        padding: 50px 25px;
+        border-radius: 50px 50px 50px 0;
+        box-sizing: border-box;
+        .FormInput{
+            display: flex;
+            align-items: center;
+            position: relative;
+            height:100%;
+            margin:25px 0;
+            .FormLabel{
+                background: $cyan;
+                height:100%;
+                width: 100%;
+                position: absolute;
+                top:0;
+                left:0;
+                font-size: $inputFontSize;
+                min-width:$labelWidth;
+                line-height: ($inputTopBottomPadding*2) + $inputFontSize+2;
+                border-radius: $inputBorderRadius;
+
+                @include ease(333ms);
+            }
+            .Input, .LargeInput{
+                width:100%;
+                padding:0;
+                height:100%;
+                border: none;
+                font-size: $inputFontSize;
+                padding: $inputTopBottomPadding 10px $inputTopBottomPadding ($labelWidth + 10);
+                border-radius: $inputBorderRadius;
+
+                @include ease(333ms);
+            }
+            .LargeInput:focus{
+                padding-bottom:150px;
+            }
+        }
+        .FormInput:hover{
+            .FormLabel{
+                width: 0;
+                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+            }
+        }
+        .FormInput:focus{
+            .FormLabel{
+                width: 0;
+                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+            }
+        }
+        .FormInput:focus-within{
+            .FormLabel{
+                width: 0;
+                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+            }
+        }
+        .focused{
+            .FormLabel{
+                width: 0;
+                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+            }
+            .LargeInput{
+                padding-bottom:150px;
+            }
+        }
+        .invalid{
+            .FormLabel{
+                background: red;
+            }
+        }
+        .Submit{
+            background: $yellow;
+            color:$dark;
+            margin-top: 15px;
+            height:45px;
+            width:50%;
+            min-width:75px;
+            max-width: 175px;
+            // line-height: 45px;
+            border-radius: $inputBorderRadius;
+            font-weight: bold;
+            font-size: $inputFontSize;
+            float: right;
+            display: flex;
+            align-items:center;
+            position: relative;
+            svg{
+                position: absolute;
+                right: 7px;
+
+            }
+
+            @include ease(333ms);
+            h4{
+                margin: 0;
+                width: 100%;
+            }
+        }
+        .Submit:hover{
+            cursor: pointer;
+            background: $cyan;
+            color:white;
+        }
+
+    }    
 }

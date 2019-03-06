@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import classes from './Contact.module.scss';
 import emailjs from 'emailjs-com';
 import classNames from 'classnames';
+import { Snackbar, Button, IconButton } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import { FaAngleRight } from "react-icons/fa";
+
 class Contact extends Component{
     constructor(props){
         super(props);
@@ -14,79 +18,190 @@ class Contact extends Component{
             form_name:'',
             form_message:'',
 
-            formSubmitted:false
+            formSubmitted:false,
+
+            emailInputClasses: classNames(classes.FormInput),
+            nameInputClasses: classNames(classes.FormInput),
+            messageInputClasses: classNames(classes.FormInput),
+
+            snackbarOpen:false,
+            errorMessage:null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
-    handleChange( e ){
+    handleChange = ( e ) => {
         this.setState({ [e.target.name]: e.target.value});
+        
+        //check which input is being changed
+        switch(e.target.name){
+            case 'form_email':
+                //check if it is filled or not
+                e.target.value !== '' ? 
+                    //set focused class if filled
+                    this.setState({ emailInputClasses: classNames(classes.FormInput, classes.focused)}) : 
+                    //remove focused class if unfilled
+                    this.setState({ emailInputClasses: classNames(classes.FormInput)});
+                break;
+
+            case 'form_name':
+                e.target.value !== '' ? 
+                    this.setState({ nameInputClasses: classNames(classes.FormInput, classes.focused)}) : 
+                    this.setState({ nameInputClasses: classNames(classes.FormInput)});
+                break;
+            
+            case 'form_message':
+                e.target.value !== '' ? 
+                    this.setState({ messageInputClasses: classNames(classes.FormInput, classes.focused)}) : 
+                    this.setState({ messageInputClasses: classNames(classes.FormInput)});
+                break;
+
+            default: 
+                break;
+        }
     }
 
     handleSubmit(event) {
         event.preventDefault();
+
+        //The parameters being sent in the email
+        //The object props correspond to the email template in EmailJS
         let params = {
             email:this.state.form_email,
             name:this.state.form_name,
             message:this.state.form_message
         }
 
-        this.sendFeedback(
-          this.state.template_id,
-          params,
-          this.state.user_id
-        );
-    
+        if(this.validEmail(params.email)){
+            if(params.message !== null && params.message !== '') {
+                this.sendFeedback(
+                    this.state.template_id,
+                    params,
+                    this.state.user_id
+                );
+            }else{
+                this.setState({
+                    snackbarOpen: true,
+                    messageInputClasses: classNames(classes.FormInput, classes.focused, classes.invalid),
+                    errorMessage: "Please enter a message."
+                })
+            }
+        }else{
+            this.setState({
+                snackbarOpen: true,
+                emailInputClasses: classNames(classes.FormInput, classes.focused, classes.invalid),
+                errorMessage: "That's not a real email address."
+            })
+        }
+
         this.setState({
           formSubmitted: true
         });
     }
-
-    sendFeedback(templateId, email_content, user_id) {
-        window.emailjs
-          .send(
-                this.state.service_id, 
-                templateId, 
-                email_content, 
-                user_id
-                )
-          .then(res => {
+    validEmail = (email) => {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+            return (true)
+        }else{
             this.setState({
-              formEmailSent: true
-            });
-          })
-          // Handle errors here however you like
-          .catch(err => console.error('Failed to send feedback. Error: ', err));
+                snackbarOpen: true,
+                errorMessage: "You have entered an invalid email address!"
+            })
+            return (false)
+        }
     }
+    sendFeedback(templateId, email_content, user_id) {
+        console.log('uncomment sendFeedback in Contact.js to send emails again')
+        // window.emailjs
+        //   .send(
+        //         this.state.service_id, 
+        //         templateId, 
+        //         email_content, 
+        //         user_id
+        //         )
+        //   .then(res => {
+        //     this.setState({
+        //       formEmailSent: true
+        //     });
+        //   })
+        //   // Handle errors here however you like
+        //   .catch(err => console.error('Failed to send message. Error: ', err));
+    }
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        this.setState({ snackbarOpen: false });
+    };
     render(){
         return(
-            <>
-                <div>Shoot me a message and let's chat!</div>
-                <form className={classes.ContactForm} onSubmit={e => e.preventDefault()}>
-                    <input 
-                        type='email' 
-                        placeholder='Email' 
-                        name='form_email' 
-                        autoComplete="email"
-                        onChange={this.handleChange}
-                        className={classNames(classes.Input)}></input>
-                    <input 
-                        type='text' 
-                        placeholder='Name' 
-                        name='form_name' 
-                        onChange={this.handleChange}
-                        className={classNames(classes.Input)}></input>
-                    <textarea 
-                        type='text' 
-                        placeholder='Message' 
-                        name='form_message' 
-                        autoComplete="username"
-                        onChange={this.handleChange}
-                        className={classNames(classes.Input, classes.LargeInput)}></textarea>
+            <div className={classes.ContactPage}>
+                <form className={classes.ContactForm}>
+                    <Snackbar
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                        }}
+                        open={this.state.snackbarOpen}
+                        autoHideDuration={3000}
+                        onClose={this.handleClose}
+                        ContentProps={{
+                            'aria-describedby': 'message-id',
+                        }}
+                        message={<span id="message-id">{this.state.errorMessage}</span>}
+                        action={[
+                            <IconButton
+                                key="close"
+                                aria-label="Close"
+                                color="inherit"
+                                className={classes.close}
+                                onClick={this.handleClose}
+                            >
+                                <CloseIcon />
+                            </IconButton>,
+                        ]}
+                    />
+
+                    {/* <h4 className={classes.Text}>Shoot me a message and let's chat!</h4> */}
+                    <div id="email" className={this.state.emailInputClasses}>
+                        <label htmlFor='form_email' className={classes.FormLabel}>Email</label>
+                        <input 
+                            type='email' 
+                            placeholder="name@email.com" 
+                            name='form_email' 
+                            autoComplete="email"
+                            value={this.state.form_email}
+                            onChange={this.handleChange}
+                            className={classNames(classes.Input)}></input>
+                    </div>             
+                    <div id="name" className={this.state.nameInputClasses}>
+                        <label htmlFor='form_name' className={classes.FormLabel}>Name</label>
+                        <input 
+                            type='text' 
+                            placeholder='Who are you?' 
+                            name='form_name' 
+                            onChange={this.handleChange}
+                            className={classNames(classes.Input)}></input>
+                    </div>
+                    <div className={this.state.messageInputClasses}>
+                        <label htmlFor='form_message' className={classes.FormLabel}>Message</label>
+                        <textarea 
+                            rows="1"
+                            type='text' 
+                            placeholder="What's up?" 
+                            name='form_message' 
+                            onChange={this.handleChange}
+                            className={classNames(classes.Input, classes.LargeInput)}></textarea>
+                    </div>
+                    
+                    <div className={classes.Submit} onClick={this.handleSubmit}>
+                        <h4>Send</h4>
+                        <FaAngleRight/>
+                    </div>
                 </form>
-                {/* <div onClick={this.handleSubmit}>Click Here</div> */}
-            </>
+            </div>
         );
     }
 }

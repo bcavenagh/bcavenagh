@@ -157,76 +157,78 @@ class Contact extends Component{
     render(){
         return(
             <div className={classes.ContactPage}>
-                <div className={classes.ContactContent}>
-                    <form name="contact_form" className={classes.ContactForm}>
+                <div className={classes.ContactGrid}>
                     <Link to={'/'}><button className={classes.BackButton}><FaAngleLeft/>Back</button></Link>
-                    <h1>Say Hey!</h1>
-                        <Snackbar
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'center',
-                            }}
-                            open={this.state.snackbarOpen}
-                            autoHideDuration={3000}
-                            onClose={this.handleClose}
-                            ContentProps={{
-                                'aria-describedby': 'message-id',
-                            }}
-                            message={<span id="message-id">{this.state.errorMessage}</span>}
-                            action={[
-                                <IconButton
-                                    key="close"
-                                    aria-label="Close"
-                                    color="inherit"
-                                    className={classes.close}
-                                    onClick={this.handleClose}
-                                >
-                                    <CloseIcon />
-                                </IconButton>,
-                            ]}
-                        />
-    
-                        {/* <h4 className={classes.Text}>Shoot me a message and let's chat!</h4> */}
-                        <div id="email" className={this.state.emailInputClasses} onClick={() => this.setFocus('form_email')}>
-                            <label htmlFor='form_email' className={classes.FormLabel}>Email</label>
-                            <input 
-                                type='email' 
-                                placeholder="name@email.com" 
-                                name='form_email' 
-                                id='form_email'
-                                autoComplete="email"
-                                value={this.state.form_email}
-                                onChange={this.handleChange}
-                                className={classNames(classes.Input)}></input>
-                        </div>             
-                        <div id="name" className={this.state.nameInputClasses} onClick={() => this.setFocus('form_name')}>
-                            <label htmlFor='form_name' className={classes.FormLabel}>Name</label>
-                            <input 
-                                type='text' 
-                                placeholder='Who are you?' 
-                                name='form_name' 
-                                id='form_name'
-                                onChange={this.handleChange}
-                                className={classNames(classes.Input)}></input>
-                        </div>
-                        <div className={this.state.messageInputClasses} onClick={() => this.setFocus('form_message')}>
-                            <label htmlFor='form_message' className={classes.FormLabel}>Message</label>
-                            <textarea 
-                                rows="1"
-                                type='text' 
-                                placeholder="What's up?" 
-                                name='form_message' 
-                                id="form_message"
-                                onChange={this.handleChange}
-                                className={classNames(classes.Input, classes.LargeInput)}></textarea>
-                        </div>
-                        
-                        <div className={classes.Submit} onClick={this.handleSubmit}>
-                            <h4>Send</h4>
-                            <FaAngleRight/>
-                        </div>
-                        <div className={classes.Hoopla}><img src={Hoopla}/></div>
-                    </form>
+                    <div className={classes.ContactContent}>
+                        <form name="contact_form" className={classes.ContactForm}>
+                        <h1>Say Hey!</h1>
+                            <Snackbar
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'center',
+                                }}
+                                open={this.state.snackbarOpen}
+                                autoHideDuration={3000}
+                                onClose={this.handleClose}
+                                ContentProps={{
+                                    'aria-describedby': 'message-id',
+                                }}
+                                message={<span id="message-id">{this.state.errorMessage}</span>}
+                                action={[
+                                    <IconButton
+                                        key="close"
+                                        aria-label="Close"
+                                        color="inherit"
+                                        className={classes.close}
+                                        onClick={this.handleClose}
+                                    >
+                                        <CloseIcon />
+                                    </IconButton>,
+                                ]}
+                            />
+        
+                            {/* <h4 className={classes.Text}>Shoot me a message and let's chat!</h4> */}
+                            <div id="email" className={this.state.emailInputClasses} onClick={() => this.setFocus('form_email')}>
+                                <label htmlFor='form_email' className={classes.FormLabel}>Email</label>
+                                <input 
+                                    type='email' 
+                                    placeholder="name@email.com" 
+                                    name='form_email' 
+                                    id='form_email'
+                                    autoComplete="email"
+                                    value={this.state.form_email}
+                                    onChange={this.handleChange}
+                                    className={classNames(classes.Input)}></input>
+                            </div>             
+                            <div id="name" className={this.state.nameInputClasses} onClick={() => this.setFocus('form_name')}>
+                                <label htmlFor='form_name' className={classes.FormLabel}>Name</label>
+                                <input 
+                                    type='text' 
+                                    placeholder='Who are you?' 
+                                    name='form_name' 
+                                    id='form_name'
+                                    onChange={this.handleChange}
+                                    className={classNames(classes.Input)}></input>
+                            </div>
+                            <div className={this.state.messageInputClasses} onClick={() => this.setFocus('form_message')}>
+                                <label htmlFor='form_message' className={classes.FormLabel}>Message</label>
+                                <textarea 
+                                    rows="1"
+                                    type='text' 
+                                    placeholder="What's up?" 
+                                    name='form_message' 
+                                    id="form_message"
+                                    onChange={this.handleChange}
+                                    className={classNames(classes.Input, classes.LargeInput)}></textarea>
+                            </div>
+                            
+                            <div className={classes.Submit} onClick={this.handleSubmit}>
+                                <h4>Send</h4>
+                                <FaAngleRight/>
+                            </div>
+                            <div className={classes.Hoopla}><img src={Hoopla}/></div>
+                        </form>
+                    </div>
                 </div>
             </div>
         );

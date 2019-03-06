@@ -27,7 +27,33 @@ $inputFontSize: 20px;
     min-height:100vh;
     display: flex;
     align-items:center;
-    
+    .ContactGrid{
+        margin: 0 auto;
+        min-width: 350px;
+        max-width: 750px;
+        width:50%;
+    }
+}
+.BackButton{
+    // position: absolute;
+    // top:-125px;
+    // left:0px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background: $yellow;
+    border-radius: 24px;
+    border:none;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding:0 15px 0 10px; 
+    font-weight: bold;
+    @include ease(200ms);
+}
+.BackButton:hover{
+    cursor: pointer;
+    color: $dark;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 .ContactContent{
     width:100%;
@@ -36,27 +62,7 @@ $inputFontSize: 20px;
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-    .BackButton{
-        position: absolute;
-        top:-125px;
-        left:0px;
-        display: flex;
-        align-items: center;
-        height: 50px;
-        background: $yellow;
-        border-radius: 24px;
-        border:none;
-        font-size: 18px;
-        text-transform: uppercase;
-        padding:0 15px 0 10px; 
-        font-weight: bold;
-        @include ease(200ms);
-    }
-    .BackButton:hover{
-        cursor: pointer;
-        color: $dark;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    }
+    margin-top:60px;
     h1{
         position: absolute;
         font-family: $subfont;
@@ -73,7 +79,7 @@ $inputFontSize: 20px;
         position: relative;
         text-transform: uppercase;
         color:white;
-        width:75%;
+        width:100%;
         min-width:350px;
         max-width:750px;
         background: $dark;

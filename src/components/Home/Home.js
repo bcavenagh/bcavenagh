@@ -111,7 +111,7 @@ class Home extends Component{
                     <div className={classes.About}>
                         <div className={classes.AboutText}>
                             <h3>Hey! I'm Ben. Nice to meet you!</h3>
-                            <p>Let me tell you a little about myself. I am a recent Butler University graduate and currently a UI/UX developer for Heartland Food Products Group, owner of Splenda and Java House. I have been programming for about 7 years now and have a variety of different experiences under my belt ranging from large international companies like Radio Flyer and Splenda to smaller startups like Aubry Lane and Java House. My main focus has always been front-end devlopment and I have recently started to pick up more web design in my free time. I am quick to learn, calm-natured, and I love what I do. Have an idea? Let's make it a reality.</p>
+                            <p>Let me tell you a little about myself. I am a recent Butler University graduate and currently a UI/UX developer for Heartland Food Products Group, known for the popular brand Splenda. I have been programming for about 7 years now and have a variety of different experiences under my belt ranging from large international companies like Radio Flyer and Splenda to smaller startups like Aubry Lane and Java House. My main focus has always been front-end devlopment and I have recently started to pick up more web design in my free time. I am quick to learn, calm-natured, and I love what I do. Have an idea? Let's make it a reality.</p>
                         </div>
                     </div>
                     <div className={classes.SplitTable}>
@@ -172,15 +172,15 @@ class Home extends Component{
                 
             </div>
             <footer className={classes.Footer}>
-                <div className={classes.FooterText}>
-                    This website was handcrafted by me, for me <br/>
-                    Ben Cavenagh &copy;2019
-                </div>
                 <div className={classes.FooterSocial}>
                     <a href="https://github.com/bcavenagh"><div className={classes.FooterSocialIcon}><FaGithub size={35}/></div></a>
                     <a href="https://www.linkedin.com/in/ben-cavenagh/"><div className={classes.FooterSocialIcon}><FaLinkedinIn size={35}/></div></a>
                     <a href="https://www.instagram.com/bcavvs/"><div className={classes.FooterSocialIcon}><FaInstagram size={35}/></div></a>
                     <a href="https://www.facebook.com/ben.cavenagh"><div className={classes.FooterSocialIcon}><FaFacebook size={35}/></div></a>
+                </div>
+                <div className={classes.FooterText}>
+                    This website was handcrafted by me, for me <br/>
+                    Ben Cavenagh &copy;2019
                 </div>
             </footer>
             </>

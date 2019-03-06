@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Home from '../Home/Home';
 import classes from './Contact.module.scss';
 import emailjs from 'emailjs-com';
 import classNames from 'classnames';
 import { Snackbar, Button, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import Hoopla from '../../assets/images/Hoopla.png';
 
 class Contact extends Component{
@@ -32,6 +34,17 @@ class Contact extends Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleClose = this.handleClose.bind(this);
     }
+
+    // componentDidMount(){
+    //     window.addEventListener('touchstart', function() {
+    //         console.log('touch');
+    //         this.setState({
+    //             snackbarOpen: true,
+    //             messageInputClasses: classNames(classes.FormInput, classes.focused, classes.invalid),
+    //             errorMessage: "Please enter a message."
+    //         })
+    //     });
+    // }
 
     handleChange = ( e ) => {
         this.setState({ [e.target.name]: e.target.value});
@@ -136,77 +149,84 @@ class Contact extends Component{
     
         this.setState({ snackbarOpen: false });
     };
+    setFocus = (el) => {
+        let field = document.getElementById(el);
+        field.focus();
+        console.log('focusing');
+    }
     render(){
         return(
             <div className={classes.ContactPage}>
                 <div className={classes.ContactContent}>
-                    {/* <div className={classes.FormWrapper}> */}
-                        <form className={classes.ContactForm}>
+                    <form name="contact_form" className={classes.ContactForm}>
+                    <Link to={'/'}><button className={classes.BackButton}><FaAngleLeft/>Back</button></Link>
                     <h1>Say Hey!</h1>
-                            <Snackbar
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'center',
-                                }}
-                                open={this.state.snackbarOpen}
-                                autoHideDuration={3000}
-                                onClose={this.handleClose}
-                                ContentProps={{
-                                    'aria-describedby': 'message-id',
-                                }}
-                                message={<span id="message-id">{this.state.errorMessage}</span>}
-                                action={[
-                                    <IconButton
-                                        key="close"
-                                        aria-label="Close"
-                                        color="inherit"
-                                        className={classes.close}
-                                        onClick={this.handleClose}
-                                    >
-                                        <CloseIcon />
-                                    </IconButton>,
-                                ]}
-                            />
-        
-                            {/* <h4 className={classes.Text}>Shoot me a message and let's chat!</h4> */}
-                            <div id="email" className={this.state.emailInputClasses}>
-                                <label htmlFor='form_email' className={classes.FormLabel}>Email</label>
-                                <input 
-                                    type='email' 
-                                    placeholder="name@email.com" 
-                                    name='form_email' 
-                                    autoComplete="email"
-                                    value={this.state.form_email}
-                                    onChange={this.handleChange}
-                                    className={classNames(classes.Input)}></input>
-                            </div>             
-                            <div id="name" className={this.state.nameInputClasses}>
-                                <label htmlFor='form_name' className={classes.FormLabel}>Name</label>
-                                <input 
-                                    type='text' 
-                                    placeholder='Who are you?' 
-                                    name='form_name' 
-                                    onChange={this.handleChange}
-                                    className={classNames(classes.Input)}></input>
-                            </div>
-                            <div className={this.state.messageInputClasses}>
-                                <label htmlFor='form_message' className={classes.FormLabel}>Message</label>
-                                <textarea 
-                                    rows="1"
-                                    type='text' 
-                                    placeholder="What's up?" 
-                                    name='form_message' 
-                                    onChange={this.handleChange}
-                                    className={classNames(classes.Input, classes.LargeInput)}></textarea>
-                            </div>
-                            
-                            <div className={classes.Submit} onClick={this.handleSubmit}>
-                                <h4>Send</h4>
-                                <FaAngleRight/>
-                            </div>
-                            <div className={classes.Hoopla}><img src={Hoopla}/></div>
-                        </form>
-                    {/* </div> */}
+                        <Snackbar
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'center',
+                            }}
+                            open={this.state.snackbarOpen}
+                            autoHideDuration={3000}
+                            onClose={this.handleClose}
+                            ContentProps={{
+                                'aria-describedby': 'message-id',
+                            }}
+                            message={<span id="message-id">{this.state.errorMessage}</span>}
+                            action={[
+                                <IconButton
+                                    key="close"
+                                    aria-label="Close"
+                                    color="inherit"
+                                    className={classes.close}
+                                    onClick={this.handleClose}
+                                >
+                                    <CloseIcon />
+                                </IconButton>,
+                            ]}
+                        />
+    
+                        {/* <h4 className={classes.Text}>Shoot me a message and let's chat!</h4> */}
+                        <div id="email" className={this.state.emailInputClasses} onClick={() => this.setFocus('form_email')}>
+                            <label htmlFor='form_email' className={classes.FormLabel}>Email</label>
+                            <input 
+                                type='email' 
+                                placeholder="name@email.com" 
+                                name='form_email' 
+                                id='form_email'
+                                autoComplete="email"
+                                value={this.state.form_email}
+                                onChange={this.handleChange}
+                                className={classNames(classes.Input)}></input>
+                        </div>             
+                        <div id="name" className={this.state.nameInputClasses} onClick={() => this.setFocus('form_name')}>
+                            <label htmlFor='form_name' className={classes.FormLabel}>Name</label>
+                            <input 
+                                type='text' 
+                                placeholder='Who are you?' 
+                                name='form_name' 
+                                id='form_name'
+                                onChange={this.handleChange}
+                                className={classNames(classes.Input)}></input>
+                        </div>
+                        <div className={this.state.messageInputClasses} onClick={() => this.setFocus('form_message')}>
+                            <label htmlFor='form_message' className={classes.FormLabel}>Message</label>
+                            <textarea 
+                                rows="1"
+                                type='text' 
+                                placeholder="What's up?" 
+                                name='form_message' 
+                                id="form_message"
+                                onChange={this.handleChange}
+                                className={classNames(classes.Input, classes.LargeInput)}></textarea>
+                        </div>
+                        
+                        <div className={classes.Submit} onClick={this.handleSubmit}>
+                            <h4>Send</h4>
+                            <FaAngleRight/>
+                        </div>
+                        <div className={classes.Hoopla}><img src={Hoopla}/></div>
+                    </form>
                 </div>
             </div>
         );

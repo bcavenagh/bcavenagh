@@ -73,7 +73,7 @@ $pink:#e538a4;
     }
     .SeeMore{
         position: absolute;
-        bottom:0;
+        bottom:15px;
         left:50%;
         transform: translate(-50%, 0);
         color:$dark;
@@ -234,7 +234,7 @@ $pink:#e538a4;
     .FooterSocial{
         display: flex;
         justify-content: center;
-        margin:20px 0 0 0;
+        margin:0 0 20px 0;
         .FooterSocialIcon{
             transition: all .3s;
             width:60px;

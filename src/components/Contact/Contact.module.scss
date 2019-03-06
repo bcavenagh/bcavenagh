@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Cairo:200,300,400,600,700,900|Righteous');
+$headfont: 'Righteous', cursive;
+$subfont : 'Cairo', sans-serif;
 $dark:rgb(31, 35, 38);
 $cyan:rgb(2,192,238);
 $pink:#e538a4;
@@ -17,22 +22,38 @@ $inputFontSize: 20px;
     -ms-transition: $attr $time $curve;
     transition: $attr $time $curve;
 }
-
 .ContactPage{
     min-width:100vw;
     min-height:100vh;
+    display: flex;
+    align-items:center;
+}
+.ContactContent{
     width:100%;
     height:100%;
     display:flex;
     flex-wrap: wrap;
     align-items: center;
+    h1{
+        position: absolute;
+        font-family: $subfont;
+        font-weight: normal;
+        font-size: 40px;
+        top: -45px;
+        left: 45px;
+        border-radius: 15px;
+        margin: 0;
+        background:$dark;
+        padding: 0 15px;
+    }
     .ContactForm{
+        position: relative;
         text-transform: uppercase;
+        color:white;
         width:75%;
         min-width:350px;
-        margin:0 auto;
-        color:white;
         background: $dark;
+        margin:0 auto;
         padding: 50px 25px;
         border-radius: 50px 50px 50px 0;
         box-sizing: border-box;
@@ -136,6 +157,14 @@ $inputFontSize: 20px;
             background: $cyan;
             color:white;
         }
-
-    }    
+        .Hoopla{
+            position: absolute;
+            left: -35px;
+            bottom: -50px;
+            img{
+                height: 150px;
+                width: 150px;
+            }
+        }
+    }
 }

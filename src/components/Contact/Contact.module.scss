@@ -26,8 +26,13 @@ $inputFontSize: 20px;
     // min-width:100vw;
     // min-height:100vh;
     width: 100%;
+    height: 100%;
     display: flex;
     align-items:center;
+    background: -moz-linear-gradient(top, hsla(194,91%,67%,1) 0%, hsla(210,100%,64%,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fd3f7', endColorstr='#46a3ff',GradientType=0 ); /* IE6-9 */
     .ContactGrid{
         margin: 0 auto;
         min-width: 350px;

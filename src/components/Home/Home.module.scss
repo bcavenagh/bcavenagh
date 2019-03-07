@@ -73,7 +73,7 @@ $pink:#e538a4;
     }
     .SeeMore{
         position: absolute;
-        bottom:15px;
+        bottom:30px;
         left:50%;
         transform: translate(-50%, 0);
         color:$dark;
@@ -106,7 +106,6 @@ $pink:#e538a4;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top:75px;
             padding:45px 0 105px;
             .AboutText{
                 width:75%;
@@ -228,6 +227,7 @@ $pink:#e538a4;
     padding:50px 0;
     z-index: 4;
     position: relative;
+    width: 100%;
     .FooterText{
         color:white;
     }

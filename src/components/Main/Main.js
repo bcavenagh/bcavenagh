@@ -17,6 +17,7 @@ class Main extends Component{
         return(
             <main style={{
                 display:'flex',
+                flexWrap:'wrap',
                 justifyContent:'center',
                 alignItems:'center',
                 height:'100vh',

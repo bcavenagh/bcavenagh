@@ -23,8 +23,9 @@ $inputFontSize: 20px;
     transition: $attr $time $curve;
 }
 .ContactPage{
-    min-width:100vw;
-    min-height:100vh;
+    // min-width:100vw;
+    // min-height:100vh;
+    width: 100%;
     display: flex;
     align-items:center;
     .ContactGrid{

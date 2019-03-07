@@ -4,6 +4,7 @@ import Home from '../Home/Home';
 import Winner from '../Winner/Winner';
 import Contact from '../Contact/Contact';
 import { Switch, Route } from 'react-router-dom'
+import { FaFileExcel } from 'react-icons/fa';
 
 class Main extends Component{
     constructor(props){
@@ -14,7 +15,13 @@ class Main extends Component{
     }
     render(){
         return(
-            <main>
+            <main style={{
+                display:'flex',
+                justifyContent:'center',
+                alignItems:'center',
+                height:'100vh',
+                width:'100vw'
+            }}>
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route exact path='/winner' component={Winner}/>

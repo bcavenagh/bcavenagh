@@ -159,7 +159,7 @@ class Contact extends Component{
             <div className={classes.ContactPage}>
                 <div className={classes.Stripe}></div>
                 <div className={classes.ContactGrid}>
-                    <Link to={'/'}><button className={classes.BackButton}><FaAngleLeft/>Back</button></Link>
+                    <Link to={'/'}><button className={classes.BackButton}><FaAngleLeft/><h3>Back</h3></button></Link>
                     <div className={classes.ContactContent}>
                         <form name="contact_form" className={classes.ContactForm}>
                         <h1>Say Hey!</h1>

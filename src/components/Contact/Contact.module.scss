@@ -32,6 +32,7 @@ $inputFontSize: 20px;
     // background: linear-gradient(to bottom, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fd3f7', endColorstr='#46a3ff',GradientType=0 ); /* IE6-9 */
     // background: $cyan;
+    overflow: hidden;
     .ContactGrid{
         margin: 0 auto;
         min-width: 350px;
@@ -60,6 +61,10 @@ $inputFontSize: 20px;
     padding:0 15px 0 10px; 
     font-weight: bold;
     @include ease(200ms);
+    h3{
+        margin:0;
+        text-decoration: none;
+    }
 }
 .BackButton:hover{
     cursor: pointer;

@@ -15,11 +15,11 @@ class Main extends Component{
     }
     componentDidMount(){
         // We listen to the resize event
-        window.addEventListener('resize', () => {
-            // We execute the same script as before
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        });
+        // window.addEventListener('resize', () => {
+        //     // We execute the same script as before
+        //     let vh = window.innerHeight * 0.01;
+        //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+        // });
     }
     render(){
         return(
@@ -31,7 +31,7 @@ class Main extends Component{
                 // minHeight:'97vh',
                 // minWidth:'99vw',
                 height: '100vh', /* Fallback for browsers that do not support Custom Properties */
-                height: 'calc(var(--vh, 1vh) * 100)'
+                // height: 'calc(var(--vh, 1vh) * 100)'
             }}>
                 <Switch>
                     <Route exact path='/' component={Home}/>

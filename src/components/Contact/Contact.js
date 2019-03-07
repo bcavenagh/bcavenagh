@@ -157,6 +157,7 @@ class Contact extends Component{
     render(){
         return(
             <div className={classes.ContactPage}>
+                <div className={classes.Stripe}></div>
                 <div className={classes.ContactGrid}>
                     <Link to={'/'}><button className={classes.BackButton}><FaAngleLeft/>Back</button></Link>
                     <div className={classes.ContactContent}>

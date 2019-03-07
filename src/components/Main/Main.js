@@ -20,8 +20,8 @@ class Main extends Component{
                 flexWrap:'wrap',
                 justifyContent:'center',
                 alignItems:'center',
-                height:'100vh',
-                width:'100vw'
+                minHeight:'97vh',
+                minWidth:'99vw'
             }}>
                 <Switch>
                     <Route exact path='/' component={Home}/>

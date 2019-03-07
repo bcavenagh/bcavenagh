@@ -165,7 +165,7 @@ class Contact extends Component{
                         <h1>Say Hey!</h1>
                             <Snackbar
                                 anchorOrigin={{
-                                    vertical: 'top',
+                                    vertical: 'bottom',
                                     horizontal: 'center',
                                 }}
                                 open={this.state.snackbarOpen}

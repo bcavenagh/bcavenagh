@@ -23,8 +23,6 @@ $inputFontSize: 20px;
     transition: $attr $time $curve;
 }
 .ContactPage{
-    // min-width:100vw;
-    // min-height:100vh;
     width: 100%;
     height: 100%;
     display: flex;
@@ -45,15 +43,12 @@ $inputFontSize: 20px;
         height: 250px;
         background: $cyan;
         position: absolute;
-        -ms-transform: skewY(-20deg); /* IE 9 */
-        -webkit-transform: skewY(-20deg); /* Safari 3-8 */
-        transform: skewY(-20deg);
+        -ms-transform: skewY(-15deg); /* IE 9 */
+        -webkit-transform: skewY(-15deg); /* Safari 3-8 */
+        transform: skewY(-15deg);
     }
 }
 .BackButton{
-    // position: absolute;
-    // top:-125px;
-    // left:0px;
     display: flex;
     align-items: center;
     height: 50px;

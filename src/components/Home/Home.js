@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Home.module.scss';
-import { FaAngleDown, FaPencilRuler, FaCode, FaGithub, FaLinkedinIn, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaAngleDown, FaPencilRuler, FaCode, FaGithub, FaLinkedinIn, FaFacebook, FaInstagram, FaRegGrinBeam } from 'react-icons/fa';
 import classNames from 'classnames';
 import Companies from '../Companies/Companies';
 import Drip from './Drip/Drip';
 import './Home.css';
+import Footer from '../Footer/Footer';
 
 import avatar from '../../assets/images/Me.JPG';
 import Heartland from '../../assets/images/logos/hfpg.png';
@@ -37,12 +38,6 @@ class Home extends Component{
     componentDidMount(){
         window.addEventListener('scroll', this.onScroll, false);
 
-        // We listen to the resize event
-        // window.addEventListener('resize', () => {
-        //     // We execute the same script as before
-        //     let vh = window.innerHeight * 0.01;
-        //     document.documentElement.style.setProperty('--vh', `${vh}px`);
-        // });
     }
     componentWillUnmount() {
         // you need to unbind the same listener that was binded.
@@ -117,15 +112,15 @@ class Home extends Component{
                 <div className={classes.AboutSection}>
                     <div className={classes.About}>
                         <div className={classes.AboutText}>
-                            <h3>Hey! I'm Ben. Nice to meet you!</h3>
-                            <p>Let me tell you a little about myself. I am a recent Butler University graduate and currently a UI/UX developer for Heartland Food Products Group, known for the popular brand Splenda. I have been programming for about 7 years now and have a variety of different experiences under my belt ranging from large international companies like Radio Flyer and Splenda to smaller startups like Aubry Lane and Java House. My main focus has always been front-end devlopment and I have recently started to pick up more web design in my free time. I am quick to learn, calm-natured, and I love what I do. Have an idea? Let's make it a reality.</p>
+                            <h3>Hey! I'm Ben Cavenagh. Nice to meet you!</h3>
+                            <p>For those of you who don't know me, welcome! Let me tell you a little about myself... I am a recent graduate of Butler University (go dawgs) and am currently a UI/UX developer at Heartland Food Products Group, a company you might know as being the owner of the world famous brand, Splenda. I have been programming for the past 7+ years and have a wide variety of experiences under my belt ranging from large, international companies like Splenda and Radio Flyer, to smaller startups like Aubry Lane and Java House. Need a website? <Link to={'/contact'}>Send me a message.</Link> Have a cool idea? <Link to={'/contact'}>I'd love to hear it.</Link> Bored? <Link to={'/contact'}>Say hey!</Link></p>
                         </div>
                     </div>
                     <div className={classes.SplitTable}>
                         <div className={classNames(classes.Column, classes.ColumnSeparator)}>
                             <FaCode color='rgb(95, 211, 247)' size={45}/>
                             <h2>Front-End Development</h2>
-                            <p>Throughout my years in development I have gained knowledge of an assortment of different languages however, my heart has always been with front-end development.</p>
+                            <p>Throughout my years in development I have gained knowledge of an assortment of different languages and my heart has always been with front-end development.</p>
                             <h4>My favorite languages:</h4>
                             <ul>
                                 <li>React/React Native</li>
@@ -139,12 +134,14 @@ class Home extends Component{
                                 <li>Github</li>
                                 <li>Foundation</li>
                                 <li>WordPress</li>
+                                <li>MailChimp</li>
+                                <li>Shopify</li>
                             </ul>
                         </div>
                         <div className={classes.Column}>
                             <FaPencilRuler color='rgb(95, 211, 247)' size={45}/>
                             <h2>Design</h2>
-                            <p>I have always considered myself a creative person so naturally my next step from development was to start learning design.</p>
+                            <p>I love to design creative, fun, and attractive digital artwork alongside my development as well.</p>
                             <h4>I like to design:</h4>
                             <ul>
                                 <li>UI/UX</li>
@@ -157,7 +154,7 @@ class Home extends Component{
                                 <li>Photoshop</li> 
                                 <li>XD</li>
                                 <li>Illustrator</li>
-                                <li>Pen &amp; Paper</li>
+                                <li>Old Fashioned Pen &amp; Paper</li>
                             </ul>
                         </div>
                     </div>
@@ -166,7 +163,7 @@ class Home extends Component{
                     <div className={classes.Collab}>
                         <div className={classes.Interested}>
                             <h3>Interested in working together?</h3>
-                            <p>I'm always looking for something new to do. Send me a message and lets chat.</p>
+                            <p>I'm always looking for something new to do. Send me a message and lets chat!</p>
                         </div>
                         <Link to={'/contact'}><button>Let's Chat!</button></Link>
                     </div>
@@ -178,18 +175,7 @@ class Home extends Component{
                 </div>
                 
             </div>
-            <footer className={classes.Footer}>
-                <div className={classes.FooterSocial}>
-                    <a href="https://github.com/bcavenagh"><div className={classes.FooterSocialIcon}><FaGithub size={35}/></div></a>
-                    <a href="https://www.linkedin.com/in/ben-cavenagh/"><div className={classes.FooterSocialIcon}><FaLinkedinIn size={35}/></div></a>
-                    <a href="https://www.instagram.com/bcavvs/"><div className={classes.FooterSocialIcon}><FaInstagram size={35}/></div></a>
-                    <a href="https://www.facebook.com/ben.cavenagh"><div className={classes.FooterSocialIcon}><FaFacebook size={35}/></div></a>
-                </div>
-                <div className={classes.FooterText}>
-                    This website was handcrafted by me, for me <br/>
-                    Ben Cavenagh &copy;2019
-                </div>
-            </footer>
+            <Footer/>
             </>
         );
     }

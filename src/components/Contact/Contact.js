@@ -8,6 +8,7 @@ import { Snackbar, Button, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import Hoopla from '../../assets/images/Hoopla.png';
+import Footer from '../Footer/Footer';
 
 class Contact extends Component{
     constructor(props){
@@ -36,14 +37,7 @@ class Contact extends Component{
     }
 
     // componentDidMount(){
-    //     window.addEventListener('touchstart', function() {
-    //         console.log('touch');
-    //         this.setState({
-    //             snackbarOpen: true,
-    //             messageInputClasses: classNames(classes.FormInput, classes.focused, classes.invalid),
-    //             errorMessage: "Please enter a message."
-    //         })
-    //     });
+
     // }
 
     handleChange = ( e ) => {
@@ -142,6 +136,7 @@ class Contact extends Component{
         //   // Handle errors here however you like
         //   .catch(err => console.error('Failed to send message. Error: ', err));
     }
+
     handleClose = (event, reason) => {
         if (reason === 'clickaway') {
           return;
@@ -156,6 +151,7 @@ class Contact extends Component{
     }
     render(){
         return(
+            <>
             <div className={classes.ContactPage}>
                 <div className={classes.Stripe}></div>
                 <div className={classes.ContactGrid}>
@@ -232,6 +228,8 @@ class Contact extends Component{
                     </div>
                 </div>
             </div>
+            <Footer/>
+            </>
         );
     }
 }

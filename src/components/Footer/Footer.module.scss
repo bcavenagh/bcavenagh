@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Cairo:200,300,400,600,700,900|Righteous');
+$headfont: 'Righteous', cursive;
+$subfont : 'Cairo', sans-serif;
+$font1: 25px;
+$font2: 20px;
+$dark:rgb(31, 35, 38);
+$cyan:rgb(2,192,238);
+$pink:#e538a4;
+
+//FOOTER
+.Footer{
+    background: $cyan; /* Old browsers */
+    // background: -moz-linear-gradient(top, hsla(194,91%,67%,1) 0%, hsla(210,100%,64%,1) 100%); /* FF3.6-15 */
+    // background: -webkit-linear-gradient(top, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    // background: linear-gradient(to bottom, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fd3f7', endColorstr='#46a3ff',GradientType=0 ); /* IE6-9 */
+    padding:50px 0;
+    z-index: 4;
+    position: relative;
+    width: 100%;
+    .FooterText{
+        color:white;
+    }
+    .FooterSocial{
+        display: flex;
+        justify-content: center;
+        margin:0 0 20px 0;
+        .FooterSocialIcon{
+            transition: all .3s;
+            width:60px;
+            height:60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border:2px solid $dark;
+            margin:5px 15px;
+            border-radius: 50%;
+            svg{fill:$dark;}
+        }
+        .FooterSocialIcon:hover{
+            cursor: pointer;
+            background: white;
+            border:2px solid $cyan;
+            svg{
+                fill: $cyan;
+            }
+        }
+    }
+}

@@ -36,9 +36,9 @@ class Contact extends Component{
         this.handleClose = this.handleClose.bind(this);
     }
 
-    // componentDidMount(){
-
-    // }
+    componentDidMount(){
+        window.scrollTo(0, 0)
+    }
 
     handleChange = ( e ) => {
         this.setState({ [e.target.name]: e.target.value});
@@ -152,6 +152,8 @@ class Contact extends Component{
     render(){
         return(
             <>
+            <h1>Hey there!</h1>
+            <p>Want to get in contact with me? Fill out the form below and send away, I'll send my reply as soon as I can!</p>
             <div className={classes.ContactPage}>
                 <div className={classes.Stripe}></div>
                 <div className={classes.ContactGrid}>

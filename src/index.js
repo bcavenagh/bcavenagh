@@ -7,7 +7,7 @@ import { HashRouter } from 'react-router-dom';
 require('dotenv').config()
 
 ReactDOM.render(
-    <HashRouter>
+    <HashRouter onUpdate={() => window.scrollTo(0, 0)}>
         <App />
     </HashRouter>
     

@@ -168,7 +168,7 @@ class Contact extends Component{
                 </div>
                 <div className={classes.ContactGrid}>
                     <div className={classes.ContactContent}>
-                        <form name="contact_form" className={classes.ContactForm} onSubmit={e => { e.target.keyCode === 13 && e.preventDefault(); }}>
+                        <div name="contact_form" className={classes.ContactForm} onSubmit={e => { e.target.keyCode === 13 && e.preventDefault(); }}>
                         <Link to={'/'}><button className={classes.BackButton}><FaAngleLeft/><h3>Back to Home</h3></button></Link>
                         <h1>Say Hey!</h1>
                             <Snackbar
@@ -238,7 +238,7 @@ class Contact extends Component{
                             </div>
                             <div className={classes.Hoopla}><img src={Hoopla}/></div>
                             <p className={submittedTestClasses}>Message sent :)<br/>I'll get back to you soon. Thanks!</p>
-                        </form>
+                        </div>
                     </div>
                 </div>
             <Footer/>

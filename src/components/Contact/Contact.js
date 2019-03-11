@@ -252,7 +252,7 @@ class Contact extends Component{
                             <div className={classes.Hoopla}><img src={Hoopla}/></div>
                             <div className={loadingClasses}>
                                 <Loader 
-                                    type="Ruff"
+                                    type="Rings"
                                     color="rgb(2,192,238"
                                     height="100"	
                                     width="100"

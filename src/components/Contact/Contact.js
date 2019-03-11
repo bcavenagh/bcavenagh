@@ -4,9 +4,9 @@ import Home from '../Home/Home';
 import classes from './Contact.module.scss';
 import emailjs from 'emailjs-com';
 import classNames from 'classnames';
-import { Snackbar, Button, IconButton } from '@material-ui/core';
+import { Snackbar, Button, IconButton, Tooltip } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import { FaAngleRight, FaAngleLeft, FaLaugh } from "react-icons/fa";
 import Hoopla from '../../assets/images/Hoopla.png';
 import Footer from '../Footer/Footer';
 import Loader from 'react-loader-spinner';
@@ -105,8 +105,6 @@ class Contact extends Component{
                 errorMessage: "That's not a real email address."
             })
         }
-
-        
     }
     validEmail = (email) => {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
@@ -174,7 +172,12 @@ class Contact extends Component{
         return(
             <>
             <div className={classes.ContactPage}>
-                <div className={classes.Stripe}></div>
+                <div className={classes.Stripe}>
+                    <p>You found me! You're so close!
+                        <br/><FaLaugh/><br/>
+                        Hint: Inspect a little more and you might just find what you're looking for!
+                    <span className={classes.Secret}>You're good! Now head on over to bencavenagh.com/winner and finish the game!</span></p>
+                </div>
                 <div className={classes.IntroText}>
                     <h1>Hey there!</h1>
                     <p>Want to get in contact with me? Fill out the form below and send away, I'll send my reply as soon as I can!</p>
@@ -258,7 +261,7 @@ class Contact extends Component{
                                     width="100"
                                 /> 
                             </div>
-                            <p className={submittedTestClasses}>Message sent :)<br/>I'll get back to you soon. Thanks!</p>
+                            <p className={submittedTestClasses}>Message sent<br/>I'll get back to you soon. Thanks!<br/><Tooltip title="Hint: Can you figure out how to hide this box?"><FaLaugh/></Tooltip></p>
                         </div>
                     </div>
                 </div>

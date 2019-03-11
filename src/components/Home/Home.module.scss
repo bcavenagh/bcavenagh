@@ -202,7 +202,23 @@ $pink:#e538a4;
         font-family: $subfont;
         margin-top: 50px;
     }
-    
+    //GAME
+    .GameDisclaimer{
+        background: $dark;
+        color:white;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:0 15px;
+        p{
+            max-width: 1200px;
+        }
+        svg{
+            margin:5px;
+
+        }
+    }
     //COLLAB
     .CollabContainer{
         width:100%;

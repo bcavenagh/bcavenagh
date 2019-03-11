@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Home.module.scss';
-import { FaAngleDown, FaPencilRuler, FaCode, FaComment } from 'react-icons/fa';
+import { FaAngleDown, FaPencilRuler, FaCode, FaComment, FaLaugh } from 'react-icons/fa';
 import classNames from 'classnames';
 import Companies from '../Companies/Companies';
 import Drip from './Drip/Drip';
 import './Home.css';
 import Footer from '../Footer/Footer';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import avatar from '../../assets/images/Me.JPG';
 import Heartland from '../../assets/images/logos/hfpg.png';
@@ -37,15 +38,9 @@ class Home extends Component{
         }
         this.toggleFlip = this.toggleFlip.bind(this);
         this.onScroll = this.onScroll.bind(this)
-        // this.drip = this.drip.bind(this);
     }
     componentDidMount(){
         window.addEventListener('scroll', this.onScroll, false);
-
-        // let dripInterval = setInterval(() => this.drip(this.state.dripOffset), 1);        
-        // if (this.state.dripOffset >= 300){
-        //     window.clearInterval(dripInterval)
-        // }
     }
     componentWillUnmount() {
         // you need to unbind the same listener that was binded.
@@ -68,8 +63,6 @@ class Home extends Component{
             cover.style.transition = 'all 1s';
             cover.style.transitionTimingFunction = 'ease-out';
         }
-        
-
     
         // let heroPos = document.getElementById("avatar");
         
@@ -86,21 +79,7 @@ class Home extends Component{
         // }
         
     }
-    // drip = (slip) => {
-    //         console.log('drip: ' + this.state.dripOffset);
-    //         let parent = document.getElementById('parallax-container');
-    //         if(!parent){console.log('The element ' + parent + ' does not exist.');return;}
-    //         let children = parent.getElementsByTagName('div');
-    //         let cover = document.getElementById('cover');
-    //         for(let i = 0; i < children.length; i++){
-    //             children[i].style.transform = 'translateY(' + slip + 'px)';
-    //         }
-    //         cover.style.height = (slip) + "px";
 
-    //         this.setState({
-    //             dripOffset: slip + 1
-    //         })
-    // }
     toggleFlip(){
         let isFlipped = this.state.isFlipped;
         this.setState(function(previousState, currentProps) {
@@ -148,14 +127,14 @@ class Home extends Component{
                     <div className={classes.About}>
                         <div className={classNames(classes.AboutText)}>
                             <h3>Hey! I'm Ben Cavenagh. Nice to meet you!</h3>
-                            <p>For those of you who don't know me, welcome! Let me tell you a little about myself... I am a recent graduate of Butler University (go dawgs) and am currently a UI/UX developer at Heartland Food Products Group, a company you might know as being the owner of the world famous brand, Splenda. I have been programming for the past 7+ years and have a wide variety of experiences under my belt ranging from large, international companies like Splenda and Radio Flyer, to smaller startups like Aubry Lane and Java House. Need a website? <span className={classes.boxE}><Link to={'/contact'} className={classes.customUnderline}>Send me a message.</Link></span> Have a cool idea? <span className={classes.boxE}><Link to={'/contact'} className={classes.customUnderline}>I'd love to hear it.</Link></span> Bored? <span className={classes.boxE}><Link to={'/contact'} className={classes.customUnderline}>Say hey!</Link></span></p>
+                            <p>For those of you who don't know me, welcome! Let me tell you a little about myself... I am a recent graduate of Butler University (go dawgs) and am currently the UI/UX developer at Heartland Food Products Group, a company you might know for being the owner of the world famous brand, Splenda. I have been programming for the past 7+ years and have a wide variety of experiences under my belt ranging from large, international companies like Splenda and Radio Flyer, to smaller startups like Aubry Lane and Java House. Need a website? <span className={classes.boxE}><Link to={'/contact'} className={classes.customUnderline}>Send me a message.</Link></span> Have a cool idea? <span className={classes.boxE}><Link to={'/contact'} className={classes.customUnderline}>Let's make it!</Link></span> Just plain bored? <span className={classes.boxE}><Link to={'/contact'} className={classes.customUnderline}>Say hey!</Link></span></p>
                         </div>
                     </div>
                     <div className={classes.SplitTable}>
                         <div className={classNames(classes.Column, classes.ColumnSeparator)}>
                             <FaCode color='rgb(95, 211, 247)' size={45}/>
                             <h2>Front-End Development</h2>
-                            <p>Throughout my years in development I have gained knowledge of an assortment of different languages and my heart has always been with front-end development.</p>
+                            <p>Throughout my years in development I have gained knowledge of a variety of different languages and technologies. My heart has always been with front-end development.</p>
                             <h4>My favorite languages:</h4>
                             <ul>
                                 <li>React/React Native</li>
@@ -176,7 +155,7 @@ class Home extends Component{
                         <div className={classes.Column}>
                             <FaPencilRuler color='rgb(95, 211, 247)' size={45}/>
                             <h2>Design</h2>
-                            <p>I love to design creative, fun, and attractive digital artwork alongside my development as well.</p>
+                            <p>With all of the development I do I thought I'd try my hand at design also. I love to design creative, fun, and attractive digital artwork alongside my development as well.</p>
                             <h4>I like to design:</h4>
                             <ul>
                                 <li>UI/UX</li>
@@ -186,8 +165,8 @@ class Home extends Component{
                             </ul>
                             <h4>Tools I Use:</h4>
                             <ul>
+                                <li>Adobe XD</li>
                                 <li>Photoshop</li> 
-                                <li>XD</li>
                                 <li>Illustrator</li>
                                 <li>Old Fashioned Pen &amp; Paper</li>
                             </ul>
@@ -208,7 +187,11 @@ class Home extends Component{
                      <h1>Who I've Worked For</h1>
                     <Companies companies={this.state.companies}/>
                 </div>
-                
+                <div className={classes.GameDisclaimer}>
+                    <p>You made it this far? Wow! Thanks for checking everything out! You may think that you've seen it all... you're wrong. I like to add little easter eggs in my personal projects so let's see if you can find it! These smiles will guide you, however, you'll need a computer to see the hints they reveal.
+                        <br/><Tooltip title="First Hint: Read carefully."><FaLaugh/></Tooltip>
+                    </p>
+                </div>
             </div>
             <Footer/>
             </>

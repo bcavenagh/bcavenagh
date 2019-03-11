@@ -75,7 +75,7 @@ $inputFontSize: 20px;
                 width:100%;
                 min-width:350px;
                 max-width:750px;
-                min-height: 310px;
+                min-height: 390px;
                 background: $dark;
                 margin:0 auto;
                 padding: 50px 25px;
@@ -245,6 +245,14 @@ $inputFontSize: 20px;
         -ms-transform: skewY(-15deg); /* IE 9 */
         -webkit-transform: skewY(-15deg); /* Safari 3-8 */
         transform: skewY(-15deg);
+        display: flex;
+        justify-content: center;
+        p{
+            max-width: 350px;
+        }
+        .Secret{
+            display: none;
+        }
     }
     
 }
@@ -252,13 +260,8 @@ $inputFontSize: 20px;
 
 @media screen and (max-width:768px){
     .ContactPage{
-        // .IntroText{
-        //     display:none;
-        // }
         .ContactGrid{
-
             .ContactContent{
-                
                 .ContactForm{
                     .FormContentContainer{
                         .FormInput:hover{

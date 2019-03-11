@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/hfpg.b494c328.png"
   },
   {
-    "revision": "bbc9fb4741dc2c4f9fc1",
-    "url": "/static/css/main.9b409f09.chunk.css"
+    "revision": "a5722542adbb74f0c2e7",
+    "url": "/static/css/main.1940e8c1.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/static/media/Me.61f681a4.JPG"
   },
   {
-    "revision": "f1a51598321fe64b5730",
-    "url": "/static/js/2.f1a51598.chunk.js"
+    "revision": "878cd8bd0a7403f42689",
+    "url": "/static/js/2.878cd8bd.chunk.js"
   },
   {
     "revision": "f7946be8234fd5fa8abc91f7930b362f",
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/static/media/drip-blue-long.6bc2e998.png"
   },
   {
-    "revision": "bbc9fb4741dc2c4f9fc1",
-    "url": "/static/js/main.bbc9fb47.chunk.js"
+    "revision": "a5722542adbb74f0c2e7",
+    "url": "/static/js/main.a5722542.chunk.js"
   },
   {
     "revision": "5642fbf51155d78c7ec06f6005fbede8",
@@ -64,11 +64,11 @@ self.__precacheManifest = [
     "url": "/static/media/Hoopla.1892fb4f.png"
   },
   {
-    "revision": "f1a51598321fe64b5730",
-    "url": "/static/css/2.462ebd9d.chunk.css"
+    "revision": "878cd8bd0a7403f42689",
+    "url": "/static/css/2.522c1ea3.chunk.css"
   },
   {
-    "revision": "fed53643d741f17a2043dd9a5e26d0dc",
+    "revision": "5276e837db7d5919b341d94438f136d7",
     "url": "/index.html"
   }
 ];

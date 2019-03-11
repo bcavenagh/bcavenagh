@@ -79,7 +79,7 @@ $inputFontSize: 20px;
                 background: $dark;
                 margin:0 auto;
                 padding: 50px 25px;
-                border-radius: 50px 50px 50px 0;
+                border-radius:15px;
                 box-sizing: border-box;
                 @include ease(200ms);
                 .BackButton{

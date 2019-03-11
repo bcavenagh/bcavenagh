@@ -168,7 +168,7 @@ class Contact extends Component{
                 </div>
                 <div className={classes.ContactGrid}>
                     <div className={classes.ContactContent}>
-                        <form name="contact_form" className={classes.ContactForm}>
+                        <form name="contact_form" className={classes.ContactForm} onSubmit={e => { e.preventDefault(); }}>
                         <Link to={'/'}><button className={classes.BackButton}><FaAngleLeft/><h3>Back to Home</h3></button></Link>
                         <h1>Say Hey!</h1>
                             <Snackbar

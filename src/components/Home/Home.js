@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Home.module.scss';
-import { FaAngleDown, FaPencilRuler, FaCode, FaGithub, FaLinkedinIn, FaFacebook, FaInstagram, FaRegGrinBeam } from 'react-icons/fa';
+import { FaAngleDown, FaPencilRuler, FaCode, FaComment } from 'react-icons/fa';
 import classNames from 'classnames';
 import Companies from '../Companies/Companies';
 import Drip from './Drip/Drip';
@@ -15,6 +15,8 @@ import JavaHouse from '../../assets/images/logos/jh.png';
 import RadioFlyer from '../../assets/images/logos/rf.png';
 import AubryLane from '../../assets/images/logos/al.png';
 import GoSplash from '../../assets/images/logos/gs.png';
+
+var dripPageOffset = window.pageYOffset;
 
 class Home extends Component{
     constructor(props){
@@ -31,13 +33,19 @@ class Home extends Component{
             avatarClass: classNames(classes.Avatar),
             isFlipped:false,
             coinClass:classNames("ch-info"),
+            dripOffset:100
         }
         this.toggleFlip = this.toggleFlip.bind(this);
         this.onScroll = this.onScroll.bind(this)
+        // this.drip = this.drip.bind(this);
     }
     componentDidMount(){
         window.addEventListener('scroll', this.onScroll, false);
 
+        // let dripInterval = setInterval(() => this.drip(this.state.dripOffset), 1);        
+        // if (this.state.dripOffset >= 300){
+        //     window.clearInterval(dripInterval)
+        // }
     }
     componentWillUnmount() {
         // you need to unbind the same listener that was binded.
@@ -50,8 +58,24 @@ class Home extends Component{
         let cover = document.getElementById('cover');
         for(let i = 0; i < children.length; i++){
             children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
+            children[i].style.transition = 'all .3s';
         }
+
         cover.style.height = (window.pageYOffset)*0.8 + "px";
+
+        // let lastScrollTop = 0;
+        // let st = window.pageYOffset || document.documentElement.scrollTop;
+        // if(st > lastScrollTop){
+        //     console.log('up')
+        // }else{
+        //     console.log('down')
+        // }
+        // lastScrollTop = st <= 0 ? 0 : st;
+
+        
+
+
+        cover.style.transition = 'all .1s';
     
         // let heroPos = document.getElementById("avatar");
         
@@ -68,6 +92,21 @@ class Home extends Component{
         // }
         
     }
+    // drip = (slip) => {
+    //         console.log('drip: ' + this.state.dripOffset);
+    //         let parent = document.getElementById('parallax-container');
+    //         if(!parent){console.log('The element ' + parent + ' does not exist.');return;}
+    //         let children = parent.getElementsByTagName('div');
+    //         let cover = document.getElementById('cover');
+    //         for(let i = 0; i < children.length; i++){
+    //             children[i].style.transform = 'translateY(' + slip + 'px)';
+    //         }
+    //         cover.style.height = (slip) + "px";
+
+    //         this.setState({
+    //             dripOffset: slip + 1
+    //         })
+    // }
     toggleFlip(){
         let isFlipped = this.state.isFlipped;
         this.setState(function(previousState, currentProps) {
@@ -79,6 +118,7 @@ class Home extends Component{
     render(){
         return(
             <>
+            <Link to={'/contact'}><button className={classes.ContactButton}>Say Hey! <FaComment/></button></Link>
             <div className={classes.Hero}>
                 <div id="cover" className={classes.BlackCover} ></div>
                 <div id='parallax-container'>
@@ -99,8 +139,9 @@ class Home extends Component{
                         </div>
                     </div>
                     <div className={classes.HeroText}>
+                        <h4>Ben Cavenagh</h4>
                         <h1>Web Developer and Designer</h1>
-                        <h3>I help make the web and I love what I do.</h3>
+                        <h3>Just the friendly tech guy</h3>
                     </div>
                 </div>
                 <div className={classes.SeeMore}>
@@ -111,9 +152,9 @@ class Home extends Component{
             <div className={classes.Content}>
                 <div className={classes.AboutSection}>
                     <div className={classes.About}>
-                        <div className={classes.AboutText}>
+                        <div className={classNames(classes.AboutText)}>
                             <h3>Hey! I'm Ben Cavenagh. Nice to meet you!</h3>
-                            <p>For those of you who don't know me, welcome! Let me tell you a little about myself... I am a recent graduate of Butler University (go dawgs) and am currently a UI/UX developer at Heartland Food Products Group, a company you might know as being the owner of the world famous brand, Splenda. I have been programming for the past 7+ years and have a wide variety of experiences under my belt ranging from large, international companies like Splenda and Radio Flyer, to smaller startups like Aubry Lane and Java House. Need a website? <Link to={'/contact'}>Send me a message.</Link> Have a cool idea? <Link to={'/contact'}>I'd love to hear it.</Link> Bored? <Link to={'/contact'}>Say hey!</Link></p>
+                            <p>For those of you who don't know me, welcome! Let me tell you a little about myself... I am a recent graduate of Butler University (go dawgs) and am currently a UI/UX developer at Heartland Food Products Group, a company you might know as being the owner of the world famous brand, Splenda. I have been programming for the past 7+ years and have a wide variety of experiences under my belt ranging from large, international companies like Splenda and Radio Flyer, to smaller startups like Aubry Lane and Java House. Need a website? <span className={classes.boxE}><Link to={'/contact'} className={classes.customUnderline}>Send me a message.</Link></span> Have a cool idea? <span className={classes.boxE}><Link to={'/contact'} className={classes.customUnderline}>I'd love to hear it.</Link></span> Bored? <span className={classes.boxE}><Link to={'/contact'} className={classes.customUnderline}>Say hey!</Link></span></p>
                         </div>
                     </div>
                     <div className={classes.SplitTable}>

@@ -24,23 +24,214 @@ $inputFontSize: 20px;
 }
 .ContactPage{
     width: 100%;
-    height: 100%;
+    min-height:100%;
     display: flex;
     align-items:center;
-    // background: -moz-linear-gradient(top, hsla(194,91%,67%,1) 0%, hsla(210,100%,64%,1) 100%); /* FF3.6-15 */
-    // background: -webkit-linear-gradient(top, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    // background: linear-gradient(to bottom, hsla(194,91%,67%,1) 0%,hsla(210,100%,64%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fd3f7', endColorstr='#46a3ff',GradientType=0 ); /* IE6-9 */
-    // background: $cyan;
+    flex-wrap: wrap;
+    .IntroText{
+        width:80%;
+        font-family: $subfont;
+        margin:30px auto 15px;
+        font-size: 18px;
+        p, h1{
+            margin: 0;
+        }
+    }
     .ContactGrid{
-        margin: 0 auto;
+        margin: 0 auto 50px;
         min-width: 350px;
         max-width: 750px;
         width:50%;
+        @include ease(200ms);
         a{
             color:black;
             text-decoration: none;
         }
+        .ContactContent{
+            width:100%;
+            height:100%;
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            position: relative;
+            margin-top:60px;
+            @include ease(200ms);
+            h1{
+                position: absolute;
+                font-family: $subfont;
+                font-weight: normal;
+                font-size: 40px;
+                top: -45px;
+                left: 45px;
+                border-radius: 15px;
+                margin: 0;
+                background:$dark;
+                padding: 0 15px;
+            }
+            .ContactForm{
+                position: relative;
+                text-transform: uppercase;
+                color:white;
+                width:100%;
+                min-width:350px;
+                max-width:750px;
+                background: $dark;
+                margin:0 auto;
+                padding: 50px 25px;
+                border-radius: 50px 50px 50px 0;
+                box-sizing: border-box;
+                @include ease(200ms);
+                .BackButton{
+                    display: flex;
+                    align-items: center;
+                    height: 50px;
+                    background: none;
+                    border-radius: 24px;
+                    border:2px solid $cyan;
+                    font-size: 14px;
+                    color:$cyan;
+                    text-transform: uppercase;
+                    padding:0 15px 0 10px; 
+                    font-weight: bold;
+                    @include ease(200ms);
+                    h3{
+                        margin:0;
+                        text-decoration: none;
+                    }
+                }
+                .BackButton:hover{
+                    cursor: pointer;
+                    color: $dark;
+                    background: white;
+                    border:2px solid $dark;
+                    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+                }
+                .FormContentContainer{
+                    @include ease(200ms);
+                    .FormInput{
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        height:100%;
+                        margin:25px 0;
+                        .FormLabel{
+                            background: $cyan;
+                            height:100%;
+                            width: 100%;
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            font-size: $inputFontSize;
+                            min-width:$labelWidth;
+                            line-height: ($inputTopBottomPadding*2) + $inputFontSize+2;
+                            border-radius: $inputBorderRadius;
+            
+                            @include ease(333ms);
+                        }
+                        .Input, .LargeInput{
+                            width:100%;
+                            padding:0;
+                            height:100%;
+                            border: none;
+                            font-size: $inputFontSize;
+                            padding: $inputTopBottomPadding 10px $inputTopBottomPadding ($labelWidth + 10);
+                            border-radius: $inputBorderRadius;
+            
+                            @include ease(333ms);
+                        }
+                        .LargeInput:focus{
+                            padding-bottom:150px;
+                        }
+                    }
+                    .FormInput:hover{
+                        .FormLabel{
+                            width: 0;
+                            border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+                        }
+                    }
+                    .FormInput:focus{
+                        .FormLabel{
+                            width: 0;
+                            border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+                        }
+                    }
+                    .FormInput:focus-within{
+                        .FormLabel{
+                            width: 0;
+                            border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+                        }
+                    }
+                    .focused{
+                        .FormLabel{
+                            width: 0;
+                            border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+                        }
+                        .LargeInput{
+                            padding-bottom:150px;
+                        }
+                    }
+                    .invalid{
+                        .FormLabel{
+                            background: red;
+                        }
+                    }
+                    .Submit{
+                        background: $yellow;
+                        color:$dark;
+                        margin-top: 15px;
+                        height:45px;
+                        width:50%;
+                        min-width:75px;
+                        max-width: 175px;
+                        // line-height: 45px;
+                        border-radius: $inputBorderRadius;
+                        font-weight: bold;
+                        font-size: $inputFontSize;
+                        float: right;
+                        display: flex;
+                        align-items:center;
+                        position: relative;
+                        svg{
+                            position: absolute;
+                            right: 7px;
+                        }
+            
+                        @include ease(333ms);
+                        h4{
+                            margin: 0;
+                            width: 100%;
+                        }
+                    }
+                    .Submit:hover{
+                        cursor: pointer;
+                        background: $cyan;
+                        color:white;
+                    }
+                    
+                
+                }
+                .Hoopla{
+                    position: absolute;
+                    left: -35px;
+                    bottom: -50px;
+                    img{
+                        height: 150px;
+                        width: 150px;
+                    }
+                }
+                .ConfirmationText{
+                    color:green;
+                    font-size: 24px;
+                    @include ease(200ms);
+                }
+                .hidden{
+                    display:none!important;
+                    @include ease(200ms);
+                }
+
+            }
+        }
+        
     }
     .Stripe{
         width: 100%;
@@ -51,185 +242,11 @@ $inputFontSize: 20px;
         -webkit-transform: skewY(-15deg); /* Safari 3-8 */
         transform: skewY(-15deg);
     }
+    
 }
-.BackButton{
-    display: flex;
-    align-items: center;
-    height: 50px;
-    background: $yellow;
-    border-radius: 24px;
-    border:none;
-    font-size: 18px;
-    text-transform: uppercase;
-    padding:0 15px 0 10px; 
-    font-weight: bold;
-    @include ease(200ms);
-    h3{
-        margin:0;
-        text-decoration: none;
-    }
-}
-.BackButton:hover{
-    cursor: pointer;
-    color: $dark;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
-.ContactContent{
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-wrap: wrap;
-    align-items: center;
-    position: relative;
-    margin-top:60px;
-    h1{
-        position: absolute;
-        font-family: $subfont;
-        font-weight: normal;
-        font-size: 40px;
-        top: -45px;
-        left: 45px;
-        border-radius: 15px;
-        margin: 0;
-        background:$dark;
-        padding: 0 15px;
-    }
-    .ContactForm{
-        position: relative;
-        text-transform: uppercase;
-        color:white;
-        width:100%;
-        min-width:350px;
-        max-width:750px;
-        background: $dark;
-        margin:0 auto;
-        padding: 50px 25px;
-        border-radius: 50px 50px 50px 0;
-        box-sizing: border-box;
-        .FormInput{
-            display: flex;
-            align-items: center;
-            position: relative;
-            height:100%;
-            margin:25px 0;
-            .FormLabel{
-                background: $cyan;
-                height:100%;
-                width: 100%;
-                position: absolute;
-                top:0;
-                left:0;
-                font-size: $inputFontSize;
-                min-width:$labelWidth;
-                line-height: ($inputTopBottomPadding*2) + $inputFontSize+2;
-                border-radius: $inputBorderRadius;
 
-                @include ease(333ms);
-            }
-            .Input, .LargeInput{
-                width:100%;
-                padding:0;
-                height:100%;
-                border: none;
-                font-size: $inputFontSize;
-                padding: $inputTopBottomPadding 10px $inputTopBottomPadding ($labelWidth + 10);
-                border-radius: $inputBorderRadius;
 
-                @include ease(333ms);
-            }
-            .LargeInput:focus{
-                padding-bottom:150px;
-            }
-        }
-        .FormInput:hover{
-            .FormLabel{
-                width: 0;
-                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
-            }
-        }
-        .FormInput:focus{
-            .FormLabel{
-                width: 0;
-                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
-            }
-        }
-        .FormInput:focus-within{
-            .FormLabel{
-                width: 0;
-                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
-            }
-        }
-        .focused{
-            .FormLabel{
-                width: 0;
-                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
-            }
-            .LargeInput{
-                padding-bottom:150px;
-            }
-        }
-        .invalid{
-            .FormLabel{
-                background: red;
-            }
-        }
-        .Submit{
-            background: $yellow;
-            color:$dark;
-            margin-top: 15px;
-            height:45px;
-            width:50%;
-            min-width:75px;
-            max-width: 175px;
-            // line-height: 45px;
-            border-radius: $inputBorderRadius;
-            font-weight: bold;
-            font-size: $inputFontSize;
-            float: right;
-            display: flex;
-            align-items:center;
-            position: relative;
-            svg{
-                position: absolute;
-                right: 7px;
-            }
-
-            @include ease(333ms);
-            h4{
-                margin: 0;
-                width: 100%;
-            }
-        }
-        .Submit:hover{
-            cursor: pointer;
-            background: $cyan;
-            color:white;
-        }
-        .Hoopla{
-            position: absolute;
-            left: -35px;
-            bottom: -50px;
-            img{
-                height: 150px;
-                width: 150px;
-            }
-        }
-    }
-}
 @media screen and (max-width:768px){
-    // .ContactContent{
-    //     .ContactForm{
-    //         .FormInput{
-    //             .FormLabel{
-    //                 min-width: 0px;
-    //                 opacity: 0;
-    //             }
-    //             .Input{
-    //                 padding:20px 0 20px 10px;
-    //             }
-    //         }
-    //     }
-    // }
     .ContactContent{
         
         .ContactForm{

@@ -23,7 +23,7 @@ const drip = (props) => {
     }
     
     return(
-        <div className={className} data-speed={props.speed}></div>
+        <div className={className} data-speed={props.speed} style={{}}></div>
     );
 };
 

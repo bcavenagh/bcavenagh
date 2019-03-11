@@ -56,15 +56,20 @@ class Home extends Component{
         if(!parent){console.log('The element ' + parent + ' does not exist.');return;}
         let children = parent.getElementsByTagName('div');
         let cover = document.getElementById('cover');
-        for(let i = 0; i < children.length; i++){
-            children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
-            children[i].style.transition = 'all 1s';
-            children[i].style.transitionTimingFunction = 'ease-out';
+        console.log(window.pageYOffset)
+        if(window.pageYOffset < 800){
+            // console.log('greater')
+            for(let i = 0; i < children.length; i++){
+                children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
+                children[i].style.transition = 'all 1s';
+                children[i].style.transitionTimingFunction = 'ease-out';
+            }
+            cover.style.height = (window.pageYOffset)*0.5 + "px";
+            cover.style.transition = 'all 1s';
+            cover.style.transitionTimingFunction = 'ease-out';
         }
+        
 
-        cover.style.height = (window.pageYOffset)*0.5 + "px";
-        cover.style.transition = 'all 1s';
-        cover.style.transitionTimingFunction = 'ease-out';
     
         // let heroPos = document.getElementById("avatar");
         

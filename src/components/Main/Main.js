@@ -30,7 +30,7 @@ class Main extends Component{
                 alignItems:'center',
                 // minHeight:'97vh',
                 // minWidth:'99vw',
-                height: '100vh', /* Fallback for browsers that do not support Custom Properties */
+                minHeight: '100vh', /* Fallback for browsers that do not support Custom Properties */
                 // height: 'calc(var(--vh, 1vh) * 100)'
             }}>
                 <Switch>

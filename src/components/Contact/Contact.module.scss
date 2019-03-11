@@ -249,6 +249,9 @@ $inputFontSize: 20px;
 
 @media screen and (max-width:768px){
     .ContactPage{
+        .IntroText{
+            display:none;
+        }
         .ContactGrid{
 
             .ContactContent{

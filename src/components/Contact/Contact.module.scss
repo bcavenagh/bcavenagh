@@ -247,44 +247,47 @@ $inputFontSize: 20px;
 
 
 @media screen and (max-width:768px){
-    .ContactContent{
-        
-        .ContactForm{
-            
-            .FormInput{
+    .ContactPage{
+        .ContactGrid{
+
+            .ContactContent{
                 
-            }
-            .FormInput:hover{
-                .FormLabel{
-                    width: 0;
-                    border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
-                    min-width: 0px;
-                    opacity: 0;
-                }
-                .Input{
-                    padding:20px 0 20px 10px;
-                }
-            }
-            .FormInput:focus{
-                .FormLabel{
-                    width: 0;
-                    border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
-                    min-width: 0px;
-                    opacity: 0;
-                }
-                .Input{
-                    padding:20px 0 20px 10px;
-                }
-            }
-            .FormInput:focus-within{
-                .FormLabel{
-                    width: 0;
-                    border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
-                    min-width: 0px;
-                    opacity: 0;
-                }
-                .Input{
-                    padding:20px 0 20px 10px;
+                .ContactForm{
+                    .FormContentContainer{
+                        .FormInput:hover{
+                            .FormLabel{
+                                width: 0;
+                                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+                                min-width: 0px;
+                                opacity: 0;
+                            }
+                            .Input{
+                                padding:20px 0 20px 10px;
+                            }
+                        }
+                        .FormInput:focus{
+                            .FormLabel{
+                                width: 0;
+                                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+                                min-width: 0px;
+                                opacity: 0;
+                            }
+                            .Input{
+                                padding:20px 0 20px 10px;
+                            }
+                        }
+                        .FormInput:focus-within{
+                            .FormLabel{
+                                width: 0;
+                                border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+                                min-width: 0px;
+                                opacity: 0;
+                            }
+                            .Input{
+                                padding:20px 0 20px 10px;
+                            }
+                        }
+                    }
                 }
             }
         }

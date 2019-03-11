@@ -151,7 +151,6 @@ class Contact extends Component{
     setFocus = (el) => {
         let field = document.getElementById(el);
         field.focus();
-        // console.log('focusing');
     }
     render(){
         let inputContainerClasses = classNames(classes.FormContentContainer);
@@ -211,8 +210,6 @@ class Contact extends Component{
                                     </IconButton>,
                                 ]}
                             />
-        
-                            {/* <h4 className={classes.Text}>Shoot me a message and let's chat!</h4> */}
                             <div className={inputContainerClasses}>
                                 <div id="email" className={this.state.emailInputClasses} onClick={() => this.setFocus('form_email')}>
                                     <label htmlFor='form_email' className={classes.FormLabel}>Email</label>

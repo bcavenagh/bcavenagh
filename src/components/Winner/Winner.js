@@ -21,8 +21,8 @@ class Winner extends Component{
             formSubmitted:false,
             finishedSend:false,
 
-            emailInputClasses: classNames(classes.FormInput),
-            nameInputClasses: classNames(classes.FormInput),
+            emailInputClasses: classNames(classes.Input),
+            nameInputClasses: classNames(classes.Input),
 
             snackbarOpen:false,
             errorMessage:null
@@ -34,7 +34,7 @@ class Winner extends Component{
     handleChange = ( e ) => {
         this.setState({ [e.target.name]: e.target.value});
     }
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
 
         //The parameters being sent in the email
@@ -54,14 +54,14 @@ class Winner extends Component{
             }else{
                 this.setState({
                     snackbarOpen: true,
-                    messageInputClasses: classNames(classes.FormInput, classes.invalid),
+                    nameInputClasses: classNames(classes.Input, classes.Invalid),
                     errorMessage: "Please enter your name!"
                 })
             }
         }else{
             this.setState({
                 snackbarOpen: true,
-                emailInputClasses: classNames(classes.FormInput, classes.invalid),
+                emailInputClasses: classNames(classes.Input, classes.Invalid),
                 errorMessage: "That's not a real email address."
             })
         }
@@ -223,10 +223,9 @@ class Winner extends Component{
                 <div className={classes.WinnerText}>
                     <h3>Congratulations!</h3>
                     <p>You've found the secret page!<br/>
-                    Enter your name here and press submit and you will be added to the site!</p>
+                    Enter your name and email here and I will email you back to explain the prize!</p>
                     <div className={inputContainerClasses}>
-                        <div id="email" className={this.state.nameInputClasses}>
-                            {/* <label htmlFor='form_email' className={classes.FormLabel}>Email</label> */}
+                        <div id="email" className={classes.FormInput}>
                             <input 
                                 type='email' 
                                 placeholder="name@email.com" 
@@ -235,10 +234,9 @@ class Winner extends Component{
                                 autoComplete="email"
                                 value={this.state.email}
                                 onChange={this.handleChange}
-                                className={classNames(classes.Input)}></input>
+                                className={this.state.emailInputClasses}></input>
                         </div>
-                        <div id="name" className={this.state.emailInputClasses}>
-                            {/* <label htmlFor='form_name' className={classes.FormLabel}>Name</label> */}
+                        <div id="name" className={classes.FormInput}>
                             <input 
                                 type='text' 
                                 placeholder="What's your name?" 
@@ -246,7 +244,7 @@ class Winner extends Component{
                                 id='name'
                                 value={this.state.name}
                                 onChange={this.handleChange}
-                                className={classNames(classes.Input)}></input>
+                                className={this.state.nameInputClasses}></input>
                         </div>
                         <div className={classes.Submit} onClick={this.handleSubmit}>
                             <h4>Send</h4>

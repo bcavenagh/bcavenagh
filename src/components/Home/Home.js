@@ -53,7 +53,6 @@ class Home extends Component{
         let cover = document.getElementById('cover');
         console.log(window.pageYOffset)
         if(window.pageYOffset < 800){
-            // console.log('greater')
             for(let i = 0; i < children.length; i++){
                 children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
                 children[i].style.transition = 'all 1s';
@@ -63,7 +62,6 @@ class Home extends Component{
             cover.style.transition = 'all 1s';
             cover.style.transitionTimingFunction = 'ease-out';
         }
-    
         // let heroPos = document.getElementById("avatar");
         
         // if(heroPos.getBoundingClientRect().top <= 0){
@@ -182,7 +180,6 @@ class Home extends Component{
                         <Link to={'/contact'}><button>Let's Chat!</button></Link>
                     </div>
                 </div>
-    
                 <div className={classes.Companies}>
                      <h1>Who I've Worked For</h1>
                     <Companies companies={this.state.companies}/>
@@ -197,6 +194,6 @@ class Home extends Component{
             </>
         );
     }
-}            
+}
 
 export default Home; 

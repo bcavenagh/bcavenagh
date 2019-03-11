@@ -120,7 +120,7 @@ class Contact extends Component{
         }
     }
     sendFeedback = (templateId, email_content, user_id) => {
-        console.log('uncomment sendFeedback in Contact.js to send emails again')
+        // console.log('uncomment sendFeedback in Contact.js to send emails again')
         this.setState({
             formSubmitted: true
         });
@@ -153,7 +153,7 @@ class Contact extends Component{
     setFocus = (el) => {
         let field = document.getElementById(el);
         field.focus();
-        console.log('focusing');
+        // console.log('focusing');
     }
     render(){
         let inputContainerClasses = classNames(classes.FormContentContainer);
@@ -252,8 +252,8 @@ class Contact extends Component{
                             <div className={classes.Hoopla}><img src={Hoopla}/></div>
                             <div className={loadingClasses}>
                                 <Loader 
-                                    type="Puff"
-                                    color="#00BFFF"
+                                    type="Ruff"
+                                    color="rgb(2,192,238"
                                     height="100"	
                                     width="100"
                                 /> 

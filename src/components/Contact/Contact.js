@@ -9,6 +9,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import Hoopla from '../../assets/images/Hoopla.png';
 import Footer from '../Footer/Footer';
+import Loader from 'react-loader-spinner';
 
 class Contact extends Component{
     constructor(props){
@@ -23,6 +24,7 @@ class Contact extends Component{
             form_message:'',
 
             formSubmitted:false,
+            finishedSend:false,
 
             emailInputClasses: classNames(classes.FormInput),
             nameInputClasses: classNames(classes.FormInput),
@@ -117,8 +119,11 @@ class Contact extends Component{
             return (false)
         }
     }
-    sendFeedback(templateId, email_content, user_id) {
+    sendFeedback = (templateId, email_content, user_id) => {
         console.log('uncomment sendFeedback in Contact.js to send emails again')
+        this.setState({
+            formSubmitted: true
+        });
         window.emailjs
           .send(
                 this.state.service_id, 
@@ -128,9 +133,9 @@ class Contact extends Component{
                 )
                 .then(res => {
                     this.setState({
-                    formSubmitted: true
-                });
-          })
+                        finishedSend: true
+                    });
+                })
           // Handle errors here however you like
           .catch(err => (this.setState({
                 snackbarOpen: true,
@@ -152,9 +157,17 @@ class Contact extends Component{
     }
     render(){
         let inputContainerClasses = classNames(classes.FormContentContainer);
+        let loadingClasses = classNames(classes.Loader, classes.hidden);
         let submittedTestClasses = classNames(classes.ConfirmationText, classes.hidden);
         
         if(this.state.formSubmitted){
+            loadingClasses = classNames(classes.Loader);
+            inputContainerClasses = classNames(classes.FormContentContainer, classes.hidden);
+            submittedTestClasses = classNames(classes.ConfirmationText, classes.hidden);
+
+        }
+        if(this.state.finishedSend){
+            loadingClasses = classNames(classes.Loader, classes.hidden);
             inputContainerClasses = classNames(classes.FormContentContainer, classes.hidden);
             submittedTestClasses = classNames(classes.ConfirmationText);
         }
@@ -237,6 +250,14 @@ class Contact extends Component{
                                 </div>
                             </div>
                             <div className={classes.Hoopla}><img src={Hoopla}/></div>
+                            <div className={loadingClasses}>
+                                <Loader 
+                                    type="Puff"
+                                    color="#00BFFF"
+                                    height="100"	
+                                    width="100"
+                                /> 
+                            </div>
                             <p className={submittedTestClasses}>Message sent :)<br/>I'll get back to you soon. Thanks!</p>
                         </div>
                     </div>

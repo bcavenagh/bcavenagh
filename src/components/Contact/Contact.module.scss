@@ -76,6 +76,7 @@ $inputFontSize: 20px;
                 width:100%;
                 min-width:350px;
                 max-width:750px;
+                min-height: 310px;
                 background: $dark;
                 margin:0 auto;
                 padding: 50px 25px;
@@ -219,6 +220,9 @@ $inputFontSize: 20px;
                         height: 150px;
                         width: 150px;
                     }
+                }
+                .Loader{
+                    margin:50px 0;
                 }
                 .ConfirmationText{
                     color:green;

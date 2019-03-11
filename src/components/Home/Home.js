@@ -58,24 +58,13 @@ class Home extends Component{
         let cover = document.getElementById('cover');
         for(let i = 0; i < children.length; i++){
             children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
-            children[i].style.transition = 'all .3s';
+            children[i].style.transition = 'all 1s';
+            children[i].style.transitionTimingFunction = 'ease-out';
         }
 
-        cover.style.height = (window.pageYOffset)*0.8 + "px";
-
-        // let lastScrollTop = 0;
-        // let st = window.pageYOffset || document.documentElement.scrollTop;
-        // if(st > lastScrollTop){
-        //     console.log('up')
-        // }else{
-        //     console.log('down')
-        // }
-        // lastScrollTop = st <= 0 ? 0 : st;
-
-        
-
-
-        cover.style.transition = 'all .1s';
+        cover.style.height = (window.pageYOffset)*0.5 + "px";
+        cover.style.transition = 'all 1s';
+        cover.style.transitionTimingFunction = 'ease-out';
     
         // let heroPos = document.getElementById("avatar");
         
@@ -122,10 +111,10 @@ class Home extends Component{
             <div className={classes.Hero}>
                 <div id="cover" className={classes.BlackCover} ></div>
                 <div id='parallax-container'>
-                    <Drip color='Black'/>
+                    <Drip color='Blue'/>
                     <Drip color='Yellow'/>
                     <Drip color='Pink'/>
-                    <Drip color='Blue'/>
+                    <Drip color='Black'/>
                 </div>
                 <div id="intro" className={classes.Intro}>
                     {/* <div id="avatar" className="ch-item ch-img-1" onClick={this.toggleFlip}> */}

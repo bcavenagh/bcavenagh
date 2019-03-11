@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 const drip = (props) => {
     let className = '';
+    let topSetting = '0px';
     switch (props.color){
         case 'Blue':
             className = classNames(classes.Image, classes.Blue);
@@ -16,6 +17,7 @@ const drip = (props) => {
             break;
         case 'Black':
             className = classNames(classes.Image, classes.Black);
+            topSetting = '-100px';
             break;
         default:
             className = classNames(classes.Image, classes.Blue);
@@ -23,7 +25,7 @@ const drip = (props) => {
     }
     
     return(
-        <div className={className} data-speed={props.speed} style={{}}></div>
+        <div className={className} data-speed={props.speed} style={{top: topSetting}}></div>
     );
 };
 

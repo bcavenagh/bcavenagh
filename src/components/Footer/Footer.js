@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaGithub, FaLinkedinIn, FaFacebook, FaInstagram } from 'react-icons/fa';
 import classes from './Footer.module.scss';
+import Tooltip from '@material-ui/core/Tooltip';
+import { FaLaugh } from 'react-icons/fa';
 
 const footer = (props) => (
     <footer className={classes.Footer}>

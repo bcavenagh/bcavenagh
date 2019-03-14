@@ -36,7 +36,7 @@ class Home extends Component{
             coinClass:classNames("ch-info"),
             dripOffset:100
         }
-        this.toggleFlip = this.toggleFlip.bind(this);
+        // this.toggleFlip = this.toggleFlip.bind(this);
         this.onScroll = this.onScroll.bind(this)
     }
     componentDidMount(){
@@ -50,17 +50,13 @@ class Home extends Component{
         let parent = document.getElementById('parallax-container');
         if(!parent){console.log('The element ' + parent + ' does not exist.');return;}
         let children = parent.getElementsByTagName('div');
-        let cover = document.getElementById('cover');
         console.log(window.pageYOffset)
         if(window.pageYOffset < 800){
             for(let i = 0; i < children.length; i++){
                 children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
-                children[i].style.transition = 'all 1s';
+                children[i].style.transition = 'all .2s';
                 children[i].style.transitionTimingFunction = 'ease-out';
             }
-            cover.style.height = (window.pageYOffset)*0.5 + "px";
-            cover.style.transition = 'all 1s';
-            cover.style.transitionTimingFunction = 'ease-out';
         }
         // let heroPos = document.getElementById("avatar");
         
@@ -78,20 +74,19 @@ class Home extends Component{
         
     }
 
-    toggleFlip(){
-        let isFlipped = this.state.isFlipped;
-        this.setState(function(previousState, currentProps) {
-            return{
-                isFlipped: !previousState.isFlipped
-            }
-        });
-    }
+    // toggleFlip(){
+    //     let isFlipped = this.state.isFlipped;
+    //     this.setState(function(previousState, currentProps) {
+    //         return{
+    //             isFlipped: !previousState.isFlipped
+    //         }
+    //     });
+    // }
     render(){
         return(
             <>
             <Link to={'/contact'}><button className={classes.ContactButton}>Say Hey! <FaComment/></button></Link>
             <div className={classes.Hero}>
-                <div id="cover" className={classes.BlackCover} ></div>
                 <div id='parallax-container'>
                     <Drip color='Blue'/>
                     <Drip color='Yellow'/>
@@ -112,7 +107,7 @@ class Home extends Component{
                     <div className={classes.HeroText}>
                         <h4>Ben Cavenagh</h4>
                         <h1>Web Developer and Designer</h1>
-                        <h3>Just the friendly tech guy</h3>
+                        <h3>Just your friendly tech guy</h3>
                     </div>
                 </div>
                 <div className={classes.SeeMore}>
@@ -184,13 +179,14 @@ class Home extends Component{
                      <h1>Who I've Worked For</h1>
                     <Companies companies={this.state.companies}/>
                 </div>
-                <div className={classes.GameDisclaimer}>
-                    <p>You made it this far? Wow! Thanks for checking everything out! You may think that you've seen it all... you're wrong. I like to add little easter eggs in my personal projects so let's see if you can find it! These smiles will guide you, however, you'll need a computer to see the hints they reveal.
-                        <br/><Tooltip title="First Hint: Read carefully."><FaLaugh/></Tooltip>
-                    </p>
-                </div>
+                
             </div>
             <Footer/>
+            <div className={classes.GameDisclaimer}>
+                <p>You made it this far? Thanks for checking everything out! You may think that you've seen it all... you're wrong. I like to add little easter eggs in my personal projects so let's see if you can find it! These smiles will guide you, however, you'll need a computer to see the hints they reveal.
+                    <br/><Tooltip title="First Hint: Read carefully."><FaLaugh/></Tooltip>
+                </p>
+            </div>
             </>
         );
     }

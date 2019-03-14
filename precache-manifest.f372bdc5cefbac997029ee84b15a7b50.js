@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/hfpg.b494c328.png"
   },
   {
-    "revision": "5ca0db009490d5ef2dbf",
-    "url": "/static/css/main.bfe80ace.chunk.css"
+    "revision": "f85fac47ea159643f014",
+    "url": "/static/css/main.90c854ce.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -16,12 +16,12 @@ self.__precacheManifest = [
     "url": "/static/media/Me.61f681a4.JPG"
   },
   {
-    "revision": "d5b7f3029ee4c5b647ff",
-    "url": "/static/js/2.d5b7f302.chunk.js"
+    "revision": "3f4e3be04e7815911648",
+    "url": "/static/js/2.3f4e3be0.chunk.js"
   },
   {
-    "revision": "f7946be8234fd5fa8abc91f7930b362f",
-    "url": "/static/media/drip-black.f7946be8.png"
+    "revision": "c4a56226b2d21f0569ba630d4954693d",
+    "url": "/static/media/drip-black-long.c4a56226.png"
   },
   {
     "revision": "9074152fa34f402a4a82bcf775a05834",
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/static/media/drip-blue-long.6bc2e998.png"
   },
   {
-    "revision": "5ca0db009490d5ef2dbf",
-    "url": "/static/js/main.5ca0db00.chunk.js"
+    "revision": "f85fac47ea159643f014",
+    "url": "/static/js/main.f85fac47.chunk.js"
   },
   {
     "revision": "5642fbf51155d78c7ec06f6005fbede8",
@@ -64,11 +64,11 @@ self.__precacheManifest = [
     "url": "/static/media/Hoopla.1892fb4f.png"
   },
   {
-    "revision": "d5b7f3029ee4c5b647ff",
+    "revision": "3f4e3be04e7815911648",
     "url": "/static/css/2.522c1ea3.chunk.css"
   },
   {
-    "revision": "23f5366973bd10b68afcaa4e8df2f5f0",
+    "revision": "777961356c60ccfa4dc40a47d8c56d5c",
     "url": "/index.html"
   }
 ];

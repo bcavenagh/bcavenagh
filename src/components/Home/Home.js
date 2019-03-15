@@ -38,7 +38,12 @@ class Home extends Component{
         this.onScroll = this.onScroll.bind(this)
     }
     componentDidMount(){
-        window.addEventListener('scroll', this.onScroll, false);
+        if (window.innerWidth < 960) {
+            window.addEventListener('scroll', this.onScrollMobile, false);
+        }
+        else {
+            window.addEventListener('scroll', this.onScroll, false);
+        }
     }
     componentWillUnmount() {
         // you need to unbind the same listener that was binded.
@@ -48,7 +53,6 @@ class Home extends Component{
         let parent = document.getElementById('parallax-container');
         if(!parent){console.log('The element ' + parent + ' does not exist.');return;}
         let children = parent.getElementsByTagName('div');
-        console.log(window.pageYOffset)
         if(window.pageYOffset < 800){
             for(let i = 0; i < children.length; i++){
                 children[i].style.transform = 'translateY(' + (window.pageYOffset * i / children.length) + 'px)';
@@ -70,7 +74,16 @@ class Home extends Component{
         //     }
         // }
     }
-
+    onScrollMobile(){
+        let parent = document.getElementById('parallax-container');
+        if(!parent){console.log('The element ' + parent + ' does not exist.');return;}
+        let children = parent.getElementsByTagName('div');
+        if(window.pageYOffset < 800){
+            children[3].style.transform = 'translateY(' + (window.pageYOffset * 1 / children.length) + 'px)';
+            children[3].style.transition = 'all .2s';
+            children[3].style.transitionTimingFunction = 'ease-out';
+        }
+    }
     // toggleFlip(){
     //     let isFlipped = this.state.isFlipped;
     //     this.setState(function(previousState, currentProps) {
@@ -87,8 +100,8 @@ class Home extends Component{
                 <div id='parallax-container'>
                     <Drip color='Blue'/>
                     <Drip color='Yellow'/>
-                    <Drip color='Black'/>
                     <Drip color='Pink'/>
+                    <Drip color='Black'/>
                 </div>
                 <div id="intro" className={classes.Intro}>
                     {/* <div id="avatar" className="ch-item ch-img-1" onClick={this.toggleFlip}> */}

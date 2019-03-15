@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b494c328874a3c3958a2f6065a3c607b",
-    "url": "/static/media/hfpg.b494c328.png"
+    "revision": "16e12e2ec67ae9dcf744423d98deaf53",
+    "url": "/static/media/drip-yellow.16e12e2e.png"
   },
   {
-    "revision": "f85fac47ea159643f014",
-    "url": "/static/css/main.90c854ce.chunk.css"
+    "revision": "b9aaf5d8e3cbfee8e0ae",
+    "url": "/static/css/main.15540700.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -16,8 +16,24 @@ self.__precacheManifest = [
     "url": "/static/media/Me.61f681a4.JPG"
   },
   {
-    "revision": "3f4e3be04e7815911648",
-    "url": "/static/js/2.3f4e3be0.chunk.js"
+    "revision": "c44aa187e1f4db88347e",
+    "url": "/static/js/2.c44aa187.chunk.js"
+  },
+  {
+    "revision": "681d305a7ff2b91014b6911ced33f7e8",
+    "url": "/static/media/drip-black-long-mobile.681d305a.png"
+  },
+  {
+    "revision": "acf2b39defabe736cd089d87df1c77c8",
+    "url": "/static/media/drip-blue-long-mobile.acf2b39d.png"
+  },
+  {
+    "revision": "a77b1764766f65a07738abf687354aad",
+    "url": "/static/media/drip-pink-mobile.a77b1764.png"
+  },
+  {
+    "revision": "5d98485aa7dae4bf94a020558ff7c73f",
+    "url": "/static/media/drip-yellow-mobile.5d98485a.png"
   },
   {
     "revision": "c4a56226b2d21f0569ba630d4954693d",
@@ -28,16 +44,16 @@ self.__precacheManifest = [
     "url": "/static/media/drip-pink.9074152f.png"
   },
   {
-    "revision": "16e12e2ec67ae9dcf744423d98deaf53",
-    "url": "/static/media/drip-yellow.16e12e2e.png"
+    "revision": "b9aaf5d8e3cbfee8e0ae",
+    "url": "/static/js/main.b9aaf5d8.chunk.js"
   },
   {
     "revision": "6bc2e998fb4e62f6e260f124b0ede0c8",
     "url": "/static/media/drip-blue-long.6bc2e998.png"
   },
   {
-    "revision": "f85fac47ea159643f014",
-    "url": "/static/js/main.f85fac47.chunk.js"
+    "revision": "b494c328874a3c3958a2f6065a3c607b",
+    "url": "/static/media/hfpg.b494c328.png"
   },
   {
     "revision": "5642fbf51155d78c7ec06f6005fbede8",
@@ -64,11 +80,11 @@ self.__precacheManifest = [
     "url": "/static/media/Hoopla.1892fb4f.png"
   },
   {
-    "revision": "3f4e3be04e7815911648",
+    "revision": "c44aa187e1f4db88347e",
     "url": "/static/css/2.522c1ea3.chunk.css"
   },
   {
-    "revision": "777961356c60ccfa4dc40a47d8c56d5c",
+    "revision": "77e6a124ba4b02c46f3afe47d19ff9b4",
     "url": "/index.html"
   }
 ];

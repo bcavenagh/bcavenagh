@@ -87,8 +87,8 @@ class Home extends Component{
                 <div id='parallax-container'>
                     <Drip color='Blue'/>
                     <Drip color='Yellow'/>
-                    <Drip color='Pink'/>
                     <Drip color='Black'/>
+                    <Drip color='Pink'/>
                 </div>
                 <div id="intro" className={classes.Intro}>
                     {/* <div id="avatar" className="ch-item ch-img-1" onClick={this.toggleFlip}> */}

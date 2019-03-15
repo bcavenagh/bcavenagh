@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/static/media/drip-black-long-mobile.87f06bcd.png"
   },
   {
-    "revision": "a77b1764766f65a07738abf687354aad",
-    "url": "/static/media/drip-pink-mobile.a77b1764.png"
-  },
-  {
     "revision": "5d98485aa7dae4bf94a020558ff7c73f",
     "url": "/static/media/drip-yellow-mobile.5d98485a.png"
+  },
+  {
+    "revision": "a77b1764766f65a07738abf687354aad",
+    "url": "/static/media/drip-pink-mobile.a77b1764.png"
   },
   {
     "revision": "acf2b39defabe736cd089d87df1c77c8",

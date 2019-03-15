@@ -26,3 +26,19 @@
 .Black{
     top:-750px !important;
 }
+@media screen and (max-width:500px){
+
+    .Black{
+        background: url('../../../assets/images/drip-black-long-mobile.png') bottom center;
+        top:-650px !important;
+    }
+    .Pink{
+        background: url('../../../assets/images/drip-pink-mobile.png') top center;
+    }
+    .Yellow{
+        background: url('../../../assets/images/drip-yellow-mobile.png') top center;
+    }
+    .Blue{
+        background: url('../../../assets/images/drip-blue-long-mobile.png') top center;
+    }
+}

@@ -9,7 +9,6 @@ import './Home.css';
 import Footer from '../Footer/Footer';
 import Tooltip from '@material-ui/core/Tooltip';
 
-import avatar from '../../assets/images/Me.JPG';
 import Heartland from '../../assets/images/logos/hfpg.png';
 import Splenda from '../../assets/images/logos/splenda.png';
 import JavaHouse from '../../assets/images/logos/jh.png';
@@ -17,7 +16,6 @@ import RadioFlyer from '../../assets/images/logos/rf.png';
 import AubryLane from '../../assets/images/logos/al.png';
 import GoSplash from '../../assets/images/logos/gs.png';
 
-var dripPageOffset = window.pageYOffset;
 
 class Home extends Component{
     constructor(props){
@@ -59,7 +57,7 @@ class Home extends Component{
             }
         }
         // let heroPos = document.getElementById("avatar");
-        
+
         // if(heroPos.getBoundingClientRect().top <= 0){
         //     this.setState({
         //         avatarClass: classNames(classes.Avatar, classes.mini)
@@ -71,7 +69,6 @@ class Home extends Component{
         //         })
         //     }
         // }
-        
     }
 
     // toggleFlip(){

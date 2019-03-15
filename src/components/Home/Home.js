@@ -158,7 +158,7 @@ class Home extends Component{
                         <div className={classes.Column}>
                             <FaPencilRuler color='rgb(95, 211, 247)' size={45}/>
                             <h2>Design</h2>
-                            <p>With all of the development I do I thought I'd try my hand at design also. I love to design creative, fun, and attractive digital artwork alongside my development as well.</p>
+                            <p>With all of the development I do I thought I'd try my hand at design also. I love to create innovative, fun, and attractive digital artwork alongside my development.</p>
                             <h4>I like to design:</h4>
                             <ul>
                                 <li>UI/UX</li>

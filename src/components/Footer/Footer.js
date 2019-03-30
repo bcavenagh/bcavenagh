@@ -9,7 +9,7 @@ const footer = (props) => (
         <div className={classes.FooterSocial}>
             <a href="https://github.com/bcavenagh"><div className={classes.FooterSocialIcon}><FaGithub size={35}/></div></a>
             <a href="https://www.linkedin.com/in/ben-cavenagh/"><div className={classes.FooterSocialIcon}><FaLinkedinIn size={35}/></div></a>
-            <a href="https://www.instagram.com/bcavvs/"><div className={classes.FooterSocialIcon}><FaInstagram size={35}/></div></a>
+            <a href="https://www.instagram.com/bcavs.dev/"><div className={classes.FooterSocialIcon}><FaInstagram size={35}/></div></a>
             <a href="https://www.facebook.com/ben.cavenagh"><div className={classes.FooterSocialIcon}><FaFacebook size={35}/></div></a>
         </div>
         <div className={classes.FooterText}>

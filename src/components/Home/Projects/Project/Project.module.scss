@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Cairo:200,300,400,600,700,900|Righteous');
+$headfont: 'Righteous', cursive;
+$subfont : 'Cairo', sans-serif;
+$font1: 25px;
+$font2: 20px;
+$dark:rgb(31, 35, 38);
+$cyan:rgb(2,192,238);
+$pink:#e538a4;
+
+.Project{
+	height:300px;
+	width: 600px;
+	margin: 20px 0;
+	.ProjectInfo{
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,.85);
+		background-size: cover;
+		opacity: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex-flow: column;
+		transition: all .3s;
+		.Name{
+			color:white;
+			font-family: $subfont;
+			font-size: 28px;
+			margin: 0;
+		}
+		.desc{
+			color:white;
+			font-family: $subfont;
+			margin: 0 0 20px 0;
+		}
+		.ViewProjectButton{
+			width: 50%;
+			height: 45px;
+			margin: 0 auto;
+			font-family: $subfont;
+			background-color: $pink;
+			border:none;
+			color: white;
+			font-size: 20px;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: all .3s;
+		}
+		.ViewProjectButton:hover{
+			color:$pink;
+			background:white;
+		}
+	}
+}
+.Project:hover{
+	.ProjectInfo{
+		opacity: 1;
+	}
+}
+
+.mobile{
+	display: none;
+	flex-flow: column;
+	align-items: center;
+	padding: 0 15px;
+	position: relative;
+	margin-bottom: 20px;
+	img{
+		width: 100%;
+	}
+	.ProjectInfo{
+		align-self: flex-start;
+		text-align: left;	
+		margin:10px 0 25px 0;
+		position: relative;
+		.Name,.desc{
+			margin:0;
+		}
+		.desc{
+			margin-bottom: 15px;
+		}
+		.ViewProjectButton{
+			padding:0 20px;
+			font-family: $subfont;
+			background-color: $pink;
+			border:none;
+			color: white;
+			font-size: 20px;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: all .3s;
+			box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+		}
+		.ViewProjectButton:hover{
+			color:$pink;
+			background:white;
+			border: 1px solid $pink;
+			box-shadow: none;
+		}
+	}
+}
+@media all and (max-width: 1024px){
+    .Project{
+		// height: 300px;
+		// width: 90%;
+		// background-repeat: no-repeat;
+		// background-position: center center;
+		// background-size: contain;
+		display: none;
+	}
+	.mobile{
+		display: flex;
+	}
+}

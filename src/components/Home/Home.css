@@ -16,7 +16,7 @@
 	transition: all 0.4s ease-in-out;
 	top: 0px;
 	left: 0px;
-	background: #f9f9f9 url(../../assets/images/BCLogo-Padded.png) center center;
+	background: #f9f9f9 url('../../assets/images/Me.JPG') center center;
 	background-size: contain;
 	box-shadow: 
 		0 0 0 20px rgba(255,255,255,0.2), 
@@ -43,7 +43,7 @@
 .ch-info .ch-info-back {
 	transform: rotate3d(0,1,0,250deg);
 	/* background: #000; */
-	background: url('../../assets/images/Me.JPG') center center;
+	background: url(../../assets/images/BCLogo-White-Shadowed.png) center center;
 	background-size: contain;
 }
 .ch-info h3 {

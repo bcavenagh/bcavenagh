@@ -1,0 +1,54 @@
+.Testimonial{
+    width: 400px;
+    height: 350px;
+    background: #f7fdff;
+    // box-shadow: 0px 3px 10px rgba(2,192,238, 0.4);
+    box-shadow: 0 3px 15px rgba(196, 196, 196, 0.5);
+    margin: 50px 15px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    border-radius: 5px;
+    .Image{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-top: -30px;
+        border: 3px solid #f7fdff;
+    }
+    .Person{
+        width: 100%;
+        .Name{
+            width: 100%;
+            margin: 0;
+            color:#555f61;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .Position{
+            font-size: 14px;
+            font-style: italic;
+            width: 100%;
+            margin: 0;
+            color:#555f61;
+            opacity: .6;
+        }
+        .Company{
+            font-size: 14px;
+            width: 100%;
+            margin: 0;
+            color:#555f61;
+            opacity: .6;
+        }
+    }
+    .Message{
+        width: 100%;
+        color:#555f61;
+        font-size: 16px;
+        padding: 0 15px;
+        line-height: 25px;
+        opacity: .7;
+    }
+}

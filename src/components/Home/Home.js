@@ -8,6 +8,8 @@ import Drip from './Drip/Drip';
 import './Home.css';
 import Footer from '../Footer/Footer';
 import Tooltip from '@material-ui/core/Tooltip';
+import Testimonials from './Testimonials/Testimonials';
+import Projects from './Projects/Projects';
 
 import Heartland from '../../assets/images/logos/hfpg.png';
 import Splenda from '../../assets/images/logos/splenda.png';
@@ -16,6 +18,11 @@ import RadioFlyer from '../../assets/images/logos/rf.png';
 import AubryLane from '../../assets/images/logos/al.png';
 import GoSplash from '../../assets/images/logos/gs.png';
 
+import JoshPic from '../../assets/images/josh.jpeg';
+import JordanPic from '../../assets/images/jordan.jpeg';
+
+import JHEMEA from '../../assets/images/projects/JavaHouse-EMEA.png';
+import JHUS from '../../assets/images/projects/JavaHouse-US.png';
 
 class Home extends Component{
     constructor(props){
@@ -28,6 +35,40 @@ class Home extends Component{
                 {name:'Aubry Lane', logoSrc: AubryLane},
                 {name:'Go Splash', logoSrc: GoSplash},
                 {name:"Heartland FPG", logoSrc: Heartland}
+            ],
+            testimonials:[
+                // {
+                //     image: JoshPic,
+                //     name:'Josh Delph', 
+                //     position:'Sr. Manager - Digital Design',
+                //     company:'Heartland Food Products Group', 
+                //     message:'Ben is a hard worker and a quick learner. He has a proven ability to get any task done and gets along with anyone in the team. A definite advantage to have in your company.'
+                // },
+                {
+                    image: JordanPic,
+                    name:'Jordan Hetlund', 
+                    position: 'CEO',
+                    company:'Aubry Lane', 
+                    message:"\"[Ben] has shown that he's a quick learner and puts forth time and effort to diligently solve problems on both of our systems that are fairly complex. I'm very pleased with Ben's work ethic and ability to communicate and to not only work hard, but work smart.\""
+                },
+            ],
+            projects:[
+                {
+                    name: 'Java House', 
+                    link:'https://www.javahouse.com/',
+                    desc:'Shopify, Liquid, JavaScript',
+                    progress:'complete', 
+                    image: JHUS, 
+                    logo: JavaHouse
+                },
+                {
+                    name: 'Java House – Europe', 
+                    link:'https://www.javahouse.eu/', 
+                    desc:'WordPress, PHP, JavaScript, Foundation',
+                    progress:'complete', 
+                    image: JHEMEA, 
+                    logo: JavaHouse
+                },
             ],
             avatarClass: classNames(classes.Avatar),
             isFlipped:false,
@@ -117,7 +158,7 @@ class Home extends Component{
                     <div className={classes.HeroText}>
                         <h4>Ben Cavenagh</h4>
                         <h1>Web Developer and Designer</h1>
-                        <h3>Just your friendly tech guy</h3>
+                        <h3>I make the web a place people can enjoy!</h3>
                     </div>
                 </div>
                 <div className={classes.SeeMore}>
@@ -189,7 +230,9 @@ class Home extends Component{
                      <h1>Who I've Worked For</h1>
                     <Companies companies={this.state.companies}/>
                 </div>
-                
+                <Projects projects={this.state.projects}/>
+                <Testimonials testimonials={this.state.testimonials}/>
+
             </div>
             <Footer/>
             <div className={classes.GameDisclaimer}>

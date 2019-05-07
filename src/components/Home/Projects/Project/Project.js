@@ -11,7 +11,7 @@ const project = (props) => {
 			}}>
 				<div className={classes.ProjectInfo}>
 					<h2 className={classes.Name}>{props.project.name}</h2>
-					<p className={classes.desc}>{props.project.desc}</p>
+					<p className={classes.desc}>Tech used: {props.project.desc}</p>
 					<a href={props.project.link} className={classes.ViewProjectButton}>View Project</a> 
 				</div>
 			</div>
@@ -19,7 +19,7 @@ const project = (props) => {
 				<img src={props.project.image} alt='Project Snapshot'/>
 				<div className={classes.ProjectInfo}>
 					<h2 className={classes.Name}>{props.project.name}</h2>
-					<p className={classes.desc}>{props.project.desc}</p>
+					<p className={classes.desc}>Tech used: {props.project.desc}</p>
 					<a href={props.project.link} className={classes.ViewProjectButton}>View Project</a> 
 				</div>
 			</div>

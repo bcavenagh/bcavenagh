@@ -1,45 +1,47 @@
-.Companies{
-    display:flex;
-    flex-wrap: wrap;
-    width:75%;
-    align-content: space-around;
-    margin: 0px auto;
-    padding-bottom: 50px;
-    .Logo{
-        width:30%;
-        padding:5px 45px;
-        box-sizing: border-box;
-        flex-grow: 1;
-        img{
-            max-width: 100%;
-        }
+.Companies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 75%;
+  align-content: space-around;
+  margin: 0px auto;
+  padding-bottom: 50px;
+  align-items: center;
+  justify-items: center;
+  .Logo {
+    padding: 5px 45px;
+    img {
+      max-width: 100%;
     }
+  }
 }
 
-
-@media all and (max-width: 1690px) {}
-@media all and (max-width: 1280px) {}
+@media all and (max-width: 1690px) {
+}
+@media all and (max-width: 1280px) {
+}
 @media all and (max-width: 980px) {
-    .Companies{
-        .Logo{
-            width:30%;
-            padding:5px 15px;
-        }
+  .Companies {
+    .Logo {
+      //   width: 30%;
+      padding: 5px 15px;
     }
+  }
 }
 @media all and (max-width: 736px) {
-    .Companies{
-        .Logo{
-            width:50%;
-            padding:5px 15px;
-        }
+  .Companies {
+    grid-template-columns: repeat(2, 1fr);
+    .Logo {
+      //   width: 50%;
+      padding: 5px 15px;
     }
+  }
 }
-@media all and (max-width: 480px){
-    .Companies{
-        .Logo{
-            width:50%;
-            padding:5px 15px;
-        }
+@media all and (max-width: 480px) {
+  .Companies {
+    grid-template-columns: repeat(2, 1fr);
+    .Logo {
+      width: 50%;
+      padding: 5px 15px;
     }
+  }
 }
